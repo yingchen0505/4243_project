@@ -75,7 +75,8 @@ def vis_annotation(image_file, anno_file):
 
     image = np.asarray(cv2.imread(image_file))
     image = draw_bbox(image, anno)
-    image = cv2.resize(image, (1920, 1280))
+    image = cv2.resize(image, (1300, 630))
+    # image = cv2.resize(image, (1920, 1280))
     cv2.imshow(image_file, image)
     cv2.waitKey(-1)
 

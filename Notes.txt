@@ -1,0 +1,2 @@
+- There can be more than one waldo
+- Best image display: 1300, 630
