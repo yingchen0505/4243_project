@@ -20,9 +20,10 @@ import cv2
 from matplotlib import pyplot as plt
 
 MIN_MATCH_COUNT = 10
+test_image_ID = '006'
 
 img1 = cv2.imread('datasets/waldo.jpg',0)          # queryImage
-img2 = cv2.imread('datasets/JPEGImages/032.jpg',0) # trainImage
+img2 = cv2.imread('datasets/JPEGImages/' + test_image_ID + '.jpg',0) # trainImage
 
 # Initiate SIFT detector
 sift = cv2.xfeatures2d.SIFT_create()
@@ -70,4 +71,5 @@ draw_params = dict(matchColor = (0,255,0), # draw matches in green color
 
 img3 = cv2.drawMatches(img1,kp1,img2,kp2,good,None,**draw_params)
 
-plt.imshow(img3, 'gray'),plt.show()
+plt.imshow(img3, 'gray')
+plt.savefig(test_image_ID + 'results.jpg', dpi=2000)
