@@ -46,3 +46,18 @@ img3 = cv2.drawMatches(img1,kp1,img2,kp2,good,None,**draw_params)
 
 plt.imshow(img3)
 plt.savefig(test_image_ID + '_sift_results_ransac.jpg', dpi=2000)
+
+h,w = img1.shape[:2]
+pts = np.float32([ [0,0],[0,h-1],[w-1,h-1],[w-1,0] ]).reshape(-1,1,2)
+
+dst = cv2.perspectiveTransform(pts,M)
+dst += (w, 0)  # adding offset
+
+img3 = cv2.polylines(img3, [np.int32(dst)], True, (0,0,255),3, cv2.LINE_AA)
+
+plt.imshow(img3)
+plt.savefig(test_image_ID + '_sift_results_ransac_boundingbox.jpg', dpi=2000)
+
+
+## TODO: Generate text file
+
