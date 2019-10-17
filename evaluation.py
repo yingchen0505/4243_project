@@ -7,7 +7,8 @@
 
 from voc_eval import *
 
-detpath = 'baseline/{}.txt'
+detpath = 'output/{}.txt'
+# detpath = 'baseline/{}.txt'
 annopath = 'datasets/Annotations/{}.xml'
 imagesetfile = 'datasets/ImageSets/val.txt'
 cachedir = 'cache_anno'
