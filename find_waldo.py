@@ -6,6 +6,7 @@ import os
 
 template_path = 'datasets/Templates/'
 
+# Read all templates
 template_names = []
 templates = []
 # r=root, d=directories, f = files
@@ -20,20 +21,23 @@ for r, d, f in os.walk(template_path):
 
 MIN_MATCH_COUNT = 10
 
+# Initialize output file
 output_file = open("output/waldo.txt", "w+")
 
-test_ids_file = open("datasets/ImageSets/val_modified.txt", 'r')
-test_ids = test_ids_file.readlines()
+# Images IDs to run on
+image_ids_file = open("datasets/ImageSets/train.txt", 'r')
+image_ids = image_ids_file.readlines()
 
-for test_image_ID in test_ids:
-    test_image_ID = test_image_ID.strip('\n')
-    print('datasets/JPEGImages/' + test_image_ID + '.jpg')
+# Run on each image
+for image_id in image_ids:
+    image_id = image_id.strip('\n')
+    print('datasets/JPEGImages/' + image_id + '.jpg')
 
     for index, template in enumerate(templates):
         img1 = cv2.imread(template, flags=cv2.IMREAD_GRAYSCALE)  # queryImage
 
         try:
-            img2 = cv2.imread('datasets/JPEGImages/' + test_image_ID + '.jpg', flags=cv2.IMREAD_GRAYSCALE)  # trainImage
+            img2 = cv2.imread('datasets/JPEGImages/' + image_id + '.jpg', flags=cv2.IMREAD_GRAYSCALE)  # trainImage
             plt.imshow(img2)
             plt.show()
             # Initiate SIFT detector
@@ -77,21 +81,21 @@ for test_image_ID in test_ids:
                 img3 = cv2.polylines(img3, [np.int32(dst)], True, (0, 0, 255), 3, cv2.LINE_AA)
 
                 plt.imshow(img3)
-                plt.savefig('output/' + test_image_ID + '_' + template_names[index] + '.jpg', dpi=2000)
+                plt.savefig('output/' + image_id + '_' + template_names[index] + '.jpg', dpi=2000)
 
                 # Write output test file
                 xmin = np.min(dst[:, :, 0])
                 ymin = np.min(dst[:, :, 1])
                 xmax = np.max(dst[:, :, 0])
                 ymax = np.max(dst[:, :, 1])
-                output_file.write(test_image_ID + " 1.000 %.1f" % xmin + " %.1f" % ymin + " %.1f" % xmax + " %.1f" % ymax + " \n")
+                output_file.write(image_id + " 1.000 %.1f" % xmin + " %.1f" % ymin + " %.1f" % xmax + " %.1f" % ymax + " \n")
 
             else:
                 print("Not enough matches are found - {}/{}".format(len(good), MIN_MATCH_COUNT))
                 matchesMask = None
 
         except:
-            print(test_image_ID + ' failed')
+            print(image_id + ' failed')
             traceback.print_exc(file=sys.stdout)
 
 output_file.close()
