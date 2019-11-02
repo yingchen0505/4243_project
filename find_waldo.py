@@ -4,7 +4,7 @@ from matplotlib import pyplot as plt
 import sys, traceback
 import os
 
-template_path = 'datasets/Templates/'
+template_path = 'datasets/crop_train_nonsimilar/'
 
 # Read all templates
 template_names = []
@@ -36,6 +36,7 @@ sift = cv2.xfeatures2d.SIFT_create()
 
 # Build sift for all the templates
 for index, template in enumerate(templates):
+    print(template_names[index])
     img1 = cv2.imread(template, flags=cv2.IMREAD_GRAYSCALE)  # queryImage
     # find the keypoints and descriptors with SIFT
     kp1, des1 = sift.detectAndCompute(img1, None)
@@ -56,8 +57,8 @@ for image_id in image_ids:
         new_size = tuple(new_size)
         print(new_size)
         img2_resized = cv2.resize(img2, new_size)
-        plt.imshow(img2_resized)
-        plt.show()
+        # plt.imshow(img2_resized)
+        # plt.show()
         kp2, des2 = sift.detectAndCompute(img2_resized, None)
 
         for index, template_sift in enumerate(template_sifts):
