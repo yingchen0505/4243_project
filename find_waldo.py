@@ -102,6 +102,8 @@ for image_id in image_ids:
                 plt.imshow(img3)
                 plt.savefig('output/' + image_id + '_' + template_names[index] + '.jpg', dpi=2000)
 
+                # remove the template's x-width from the combined graph
+                dst[:, :, 0] -= img1.shape[1]
                 # Scale back
                 dst *= scaling_factor
 
