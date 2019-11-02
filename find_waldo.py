@@ -100,8 +100,9 @@ for image_id in image_ids:
 
                 img3 = cv2.polylines(img3, [np.int32(dst)], True, (0, 0, 255), 3, cv2.LINE_AA)
 
-                plt.imshow(img3)
-                plt.savefig('output/' + image_id + '_' + template_names[index] + '.jpg', dpi=2000)
+                # plt.imshow(img3)
+                # plt.savefig('output/' + image_id + '_' + template_names[index] + '.jpg', dpi=2000)
+                cv2.imwrite('output/' + image_id + '_' + template_names[index] + '.jpg', img3)
 
                 # remove the template's x-width from the combined graph
                 dst[:, :, 0] -= img1.shape[1]
