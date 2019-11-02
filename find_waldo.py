@@ -25,7 +25,8 @@ MIN_MATCH_COUNT = 10
 output_file = open("output/waldo.txt", "w+")
 
 # Images IDs to run on
-image_ids_file = open("datasets/ImageSets/train.txt", 'r')
+image_ids_file = open("datasets/ImageSets/val.txt", 'r')
+# image_ids_file = open("datasets/ImageSets/train.txt", 'r')
 image_ids = image_ids_file.readlines()
 
 # Run on each image
@@ -38,13 +39,21 @@ for image_id in image_ids:
 
         try:
             img2 = cv2.imread('datasets/JPEGImages/' + image_id + '.jpg', flags=cv2.IMREAD_GRAYSCALE)  # trainImage
-            plt.imshow(img2)
+            scaling_factor = np.ceil(max(img2.shape) / 1600)
+            print(img2.shape)
+            print(scaling_factor)
+            new_size = np.array(np.rint(img2.shape/scaling_factor), dtype=int)
+            new_size = np.array((new_size[1], new_size[0]))
+            new_size = tuple(new_size)
+            print(new_size)
+            img2_resized = cv2.resize(img2, new_size)
+            plt.imshow(img2_resized)
             plt.show()
             # Initiate SIFT detector
             sift = cv2.xfeatures2d.SIFT_create()
             # find the keypoints and descriptors with SIFT
             kp1, des1 = sift.detectAndCompute(img1, None)
-            kp2, des2 = sift.detectAndCompute(img2, None)
+            kp2, des2 = sift.detectAndCompute(img2_resized, None)
 
             # BFMatcher with default params
             bf = cv2.BFMatcher()
@@ -63,14 +72,14 @@ for image_id in image_ids:
                 h, w = img1.shape
                 pts = np.float32([[0, 0], [0, h - 1], [w - 1, h - 1], [w - 1, 0]]).reshape(-1, 1, 2)
                 dst = cv2.perspectiveTransform(pts, M)
-                img2 = cv2.polylines(img2, [np.int32(dst)], True, 255, 3, cv2.LINE_AA)
+                img2_resized = cv2.polylines(img2_resized, [np.int32(dst)], True, 255, 3, cv2.LINE_AA)
                 draw_params = dict(matchColor=(0, 255, 0),  # draw matches in green color
                                    singlePointColor=None,
                                    matchesMask=matchesMask,  # draw only inliers
                                    flags=2)
 
                 # cv2.drawMatchesKnn expects list of lists as matches.
-                img3 = cv2.drawMatches(img1, kp1, img2, kp2, good, None, **draw_params)
+                img3 = cv2.drawMatches(img1, kp1, img2_resized, kp2, good, None, **draw_params)
 
                 h, w = img1.shape[:2]
                 pts = np.float32([[0, 0], [0, h - 1], [w - 1, h - 1], [w - 1, 0]]).reshape(-1, 1, 2)
@@ -82,6 +91,9 @@ for image_id in image_ids:
 
                 plt.imshow(img3)
                 plt.savefig('output/' + image_id + '_' + template_names[index] + '.jpg', dpi=2000)
+
+                # Scale back
+                dst /= scaling_factor
 
                 # Write output test file
                 xmin = np.min(dst[:, :, 0])
@@ -97,5 +109,6 @@ for image_id in image_ids:
         except:
             print(image_id + ' failed')
             traceback.print_exc(file=sys.stdout)
+            break
 
 output_file.close()

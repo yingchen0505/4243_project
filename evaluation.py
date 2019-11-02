@@ -10,8 +10,8 @@ from voc_eval import *
 detpath = 'output/{}.txt'
 # detpath = 'baseline/{}.txt'
 annopath = 'datasets/Annotations/{}.xml'
-imagesetfile = 'datasets/ImageSets/train.txt'
-# imagesetfile = 'datasets/ImageSets/val.txt'
+# imagesetfile = 'datasets/ImageSets/train.txt'
+imagesetfile = 'datasets/ImageSets/val.txt'
 cachedir = 'cache_anno'
 
 classes = ['waldo', 'wenda', 'wizard']
