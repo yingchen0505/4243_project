@@ -6,8 +6,8 @@ import os
 
 template_path = 'datasets/crop_train/'
 # template_path = 'datasets/crop_train_nonsimilar/'
-output_path = 'output_downsized2/'
-# output_path = 'output/'
+# output_path = 'output_downsized2/'
+output_path = 'output/'
 
 # Read all templates
 template_names = []
@@ -56,16 +56,16 @@ for index, template in enumerate(templates):
     template_sifts.append({'kp1': kp1, 'des1': des1, 'img1': img1, 'template_name': template_names[index]})
 
     # Downsize bigger templates
-    if max(img1.shape) > 100:
-        print('downsizing ' + template_names[index])
-        new_size = get_new_size(img1.shape, 2)
-        while np.max(new_size) > 10:
-            img_resized = cv2.resize(img1, new_size)
-            kp1, des1 = sift.detectAndCompute(img_resized, None)
-            template_sifts.append({
-                'kp1': kp1, 'des1': des1, 'img1': img_resized,
-                'template_name': template_names[index] + '_size' + str(new_size)})
-            new_size = get_new_size(img_resized.shape, 2)
+    # if max(img1.shape) > 100:
+    #     print('downsizing ' + template_names[index])
+    #     new_size = get_new_size(img1.shape, 2)
+    #     while np.max(new_size) > 10:
+    #         img_resized = cv2.resize(img1, new_size)
+    #         kp1, des1 = sift.detectAndCompute(img_resized, None)
+    #         template_sifts.append({
+    #             'kp1': kp1, 'des1': des1, 'img1': img_resized,
+    #             'template_name': template_names[index] + '_size' + str(new_size)})
+    #         new_size = get_new_size(img_resized.shape, 2)
 
     # counter += 1
     # if counter > 5:
@@ -180,7 +180,14 @@ for image_id in image_ids:
                 h, w = img1.shape[:2]
                 pts = np.float32([[0, 0], [0, h - 1], [w - 1, h - 1], [w - 1, 0]]).reshape(-1, 1, 2)
 
-                dst = cv2.perspectiveTransform(pts, M)
+                try:
+                    dst = cv2.perspectiveTransform(pts, M)
+
+                except:
+                    print(template_sift['template_name'] + ' failed')
+                    traceback.print_exc(file=sys.stdout)
+                    continue
+                    
                 dst += (w, 0)  # adding offset
 
                 if points_out_of_bound(dst[:, 0, :], img2_resized.shape):
