@@ -22,7 +22,9 @@ for r, d, f in os.walk(template_path):
 MIN_MATCH_COUNT = 10
 
 # Initialize output file
-output_file = open("output/waldo.txt", "w+")
+output_file_waldo = open("output/waldo.txt", "w+")
+output_file_wenda = open("output/wenda.txt", "w+")
+output_file_wizard = open("output/wizard.txt", "w+")
 
 # Images IDs to run on
 image_ids_file = open("datasets/ImageSets/val.txt", 'r')
@@ -34,17 +36,18 @@ template_sifts = []
 # Initiate SIFT detector
 sift = cv2.xfeatures2d.SIFT_create()
 
-counter = 0
+# counter = 0
 # Build sift for all the templates
 for index, template in enumerate(templates):
     print(template_names[index])
     img1 = cv2.imread(template, flags=cv2.IMREAD_GRAYSCALE)  # queryImage
     # find the keypoints and descriptors with SIFT
     kp1, des1 = sift.detectAndCompute(img1, None)
-    template_sifts.append({'kp1': kp1, 'des1': des1, 'img1': img1})
-    counter += 1
-    if counter > 5:
-        break
+    template_sifts.append({'kp1': kp1, 'des1': des1, 'img1': img1, 'template_name': template_names[index]})
+
+    # counter += 1
+    # if counter > 5:
+    #     break
 
 
 # find center of gravity for four points
@@ -188,8 +191,17 @@ for image_id in image_ids:
                 ymin = np.min(dst[:, :, 1])
                 xmax = np.max(dst[:, :, 0])
                 ymax = np.max(dst[:, :, 1])
-                output_file.write(
-                    image_id + " 1.000 %.1f" % xmin + " %.1f" % ymin + " %.1f" % xmax + " %.1f" % ymax + " \n")
+                output_string = \
+                    image_id + " 1.000 %.1f" % xmin + " %.1f" % ymin + " %.1f" % xmax + " %.1f" % ymax + " \n"
+
+                if "waldo" in template_sift['template_name']:
+                    output_file_waldo.write(output_string)
+
+                elif "wenda" in template_sift['template_name']:
+                    output_file_wenda.write(output_string)
+
+                elif "wizard" in template_sift['template_name']:
+                    output_file_wizard.write(output_string)
 
             else:
                 print("Not enough matches are found - {}/{}".format(len(good), MIN_MATCH_COUNT))
@@ -199,4 +211,6 @@ for image_id in image_ids:
         print(image_id + ' failed')
         traceback.print_exc(file=sys.stdout)
 
-output_file.close()
+output_file_waldo.close()
+output_file_wenda.close()
+output_file_wizard.close()
