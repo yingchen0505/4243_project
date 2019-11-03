@@ -34,6 +34,7 @@ template_sifts = []
 # Initiate SIFT detector
 sift = cv2.xfeatures2d.SIFT_create()
 
+counter = 0
 # Build sift for all the templates
 for index, template in enumerate(templates):
     print(template_names[index])
@@ -41,6 +42,29 @@ for index, template in enumerate(templates):
     # find the keypoints and descriptors with SIFT
     kp1, des1 = sift.detectAndCompute(img1, None)
     template_sifts.append({'kp1': kp1, 'des1': des1, 'img1': img1})
+    counter += 1
+    if counter > 5:
+        break
+
+
+# find center of gravity for four points
+# if the diagonals are of similar lengths, it is a legit box
+def is_rectangle(x1, y1, x2, y2, x3, y3, x4, y4):
+    cx = (x1 + x2 + x3 + x4) / 4
+    cy = (y1 + y2 + y3 + y4) / 4
+
+    dd1 = np.square(cx - x1) + np.square(cy - y1)
+    dd2 = np.square(cx - x2) + np.square(cy - y2)
+    dd3 = np.square(cx - x3) + np.square(cy - y3)
+    dd4 = np.square(cx - x4) + np.square(cy - y4)
+
+    threshold = 0.5
+    diagonals = np.array((dd1, dd2, dd3, dd4))
+    if np.std(diagonals)/np.mean(diagonals) < threshold:
+        return True
+    else:
+        return False
+
 
 # Run on each image
 for image_id in image_ids:
@@ -98,14 +122,20 @@ for image_id in image_ids:
                 dst = cv2.perspectiveTransform(pts, M)
                 dst += (w, 0)  # adding offset
 
+                if not is_rectangle(
+                        dst[0][0][0], dst[0][0][1], dst[1][0][0], dst[1][0][1], dst[2][0][0], dst[2][0][1],
+                        dst[3][0][0], dst[3][0][1]):
+                    print("Bad bounding box: " + str(dst))
+                    continue
+
                 img3 = cv2.polylines(img3, [np.int32(dst)], True, (0, 0, 255), 3, cv2.LINE_AA)
 
                 # plt.imshow(img3)
                 # plt.savefig('output/' + image_id + '_' + template_names[index] + '.jpg', dpi=2000)
                 cv2.imwrite('output/' + image_id + '_' + template_names[index] + '.jpg', img3)
 
-                # remove the template's x-width from the combined graph
-                dst[:, :, 0] -= img1.shape[1]
+                # remove offset
+                dst[:, :, 0] -= w
                 # Scale back
                 dst *= scaling_factor
 
@@ -114,7 +144,8 @@ for image_id in image_ids:
                 ymin = np.min(dst[:, :, 1])
                 xmax = np.max(dst[:, :, 0])
                 ymax = np.max(dst[:, :, 1])
-                output_file.write(image_id + " 1.000 %.1f" % xmin + " %.1f" % ymin + " %.1f" % xmax + " %.1f" % ymax + " \n")
+                output_file.write(
+                    image_id + " 1.000 %.1f" % xmin + " %.1f" % ymin + " %.1f" % xmax + " %.1f" % ymax + " \n")
 
             else:
                 print("Not enough matches are found - {}/{}".format(len(good), MIN_MATCH_COUNT))
