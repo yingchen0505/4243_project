@@ -87,6 +87,21 @@ def is_too_small(pts, img_size):
         return False
 
 
+# Return true if any point falls outside of image
+def points_out_of_bound(pts, img_size):
+    if np.any(pts < 0):
+        return True
+    # image size in (y, x)
+    # points in (x, y)
+    if np.any(pts[:, 0] >= img_size[1]):
+        return True
+
+    if np.any(pts[:, 1] >= img_size[0]):
+        return True
+
+    return False
+
+
 # Run on each image
 for image_id in image_ids:
     image_id = image_id.strip('\n')
@@ -142,6 +157,10 @@ for image_id in image_ids:
 
                 dst = cv2.perspectiveTransform(pts, M)
                 dst += (w, 0)  # adding offset
+
+                if points_out_of_bound(dst[:, 0, :], img2_resized.shape):
+                    print("Out of Bound: " + str(dst))
+                    continue
 
                 if is_too_small(dst[:, 0, :], img2_resized.shape):
                     print("Too small: " + str(dst))
