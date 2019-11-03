@@ -4,7 +4,8 @@ from matplotlib import pyplot as plt
 import sys, traceback
 import os
 
-template_path = 'datasets/crop_train_nonsimilar/'
+template_path = 'datasets/crop_train/'
+# template_path = 'datasets/crop_train_nonsimilar/'
 
 # Read all templates
 template_names = []
@@ -19,7 +20,7 @@ for r, d, f in os.walk(template_path):
             templates.append(os.path.join(r, file))
             template_names.append(str(file).strip('.png'))
 
-MIN_MATCH_COUNT = 10
+MIN_MATCH_COUNT = 5
 
 # Initialize output file
 output_file_waldo = open("output/waldo.txt", "w+")
@@ -36,6 +37,13 @@ template_sifts = []
 # Initiate SIFT detector
 sift = cv2.xfeatures2d.SIFT_create()
 
+
+def get_new_size(img_shape, down_scaling_factor):
+    size = np.array(np.rint(np.array(img_shape, dtype=int) / down_scaling_factor), dtype=int)
+    size = np.array((size[1], size[0]))
+    return tuple(size)
+
+
 # counter = 0
 # Build sift for all the templates
 for index, template in enumerate(templates):
@@ -44,6 +52,18 @@ for index, template in enumerate(templates):
     # find the keypoints and descriptors with SIFT
     kp1, des1 = sift.detectAndCompute(img1, None)
     template_sifts.append({'kp1': kp1, 'des1': des1, 'img1': img1, 'template_name': template_names[index]})
+
+    # Downsize bigger templates
+    if max(img1.shape) > 100:
+        print('downsizing ' + template_names[index])
+        new_size = get_new_size(img1.shape, 2)
+        while np.max(new_size) > 10:
+            img_resized = cv2.resize(img1, new_size)
+            kp1, des1 = sift.detectAndCompute(img_resized, None)
+            template_sifts.append({
+                'kp1': kp1, 'des1': des1, 'img1': img_resized,
+                'template_name': template_names[index] + '_size' + str(new_size)})
+            new_size = get_new_size(img_resized.shape, 2)
 
     # counter += 1
     # if counter > 5:
