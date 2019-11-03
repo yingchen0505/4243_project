@@ -1,0 +1,2230 @@
+waldo_015_06
+waldo_060_01
+waldo_025_056
+waldo_059_0106
+waldo_042_07
+waldo_017_023
+waldo_021_066
+wenda_072_06
+waldo_014_0107
+waldo_032_028
+waldo_001_069
+waldo_007_047
+waldo_063_059
+wizard_010_016
+wenda_020_04
+waldo_020_013
+waldo_064_0110
+wizard_019_023
+waldo_004_040
+wenda_069_032
+wenda_052_08
+wizard_007_012
+wizard_008_04
+waldo_050_060
+wenda_057_013
+waldo_029_04
+wenda_061_035
+wenda_016_029
+waldo_004_039
+wenda_079_03
+waldo_026_064
+wizard_002_09
+waldo_013_048
+waldo_016_0109
+wizard_026_018
+waldo_062_071
+wenda_042_02
+wizard_027_015
+wenda_011_07
+waldo_044_09
+waldo_022_0117
+waldo_061_0122
+waldo_057_035
+waldo_069_0115
+wizard_079_02
+waldo_005_03
+waldo_049_057
+waldo_010_054
+waldo_027_053
+waldo_010_055
+wenda_064_030
+waldo_026_063
+wenda_062_026
+waldo_008_017
+wenda_026_023
+waldo_079_011
+wenda_063_021
+waldo_011_019
+waldo_068_052
+waldo_053_0112
+waldo_048_082
+waldo_048_081
+wenda_017_09
+waldo_051_0114
+wenda_017_010
+wizard_053_021
+wizard_017_08
+waldo_077_0120
+waldo_012_05
+wizard_058_019
+wizard_017_07
+wizard_051_022
+wenda_021_024
+wizard_055_00
+waldo_019_0118
+waldo_028_065
+waldo_016_0108
+waldo_048_083
+wizard_050_017
+wenda_076_014
+wizard_004_011
+wenda_068_018
+waldo_064_0111
+waldo_019_0119
+waldo_052_020
+wenda_031_027
+waldo_032_031
+wizard_068_013
+wizard_020_03
+waldo_026_062
+waldo_009_037
+waldo_078_061
+waldo_020_014
+wenda_022_033
+wenda_005_00
+waldo_001_068
+wenda_029_01
+wenda_014_028
+wizard_057_010
+waldo_002_024
+wenda_000_05
+wizard_011_06
+waldo_017_021
+waldo_060_00
+wenda_078_022
+waldo_006_02
+wenda_025_019
+waldo_039_050
+wizard_072_05
+waldo_071_034
+wizard_016_020
+wenda_049_020
+wenda_065_012
+wenda_058_025
+waldo_031_0105
+wenda_004_015
+wenda_007_016
+waldo_048_072
+wenda_075_031
+waldo_033_049
+waldo_032_026
+waldo_037_015
+waldo_076_036
+waldo_007_046
+wenda_023_011
+wizard_068_014
+waldo_075_0113
+wizard_044_01
+waldo_017_022
+wenda_033_017
+waldo_000_018
+wenda_077_034
+waldo_004_043
+datasets/JPEGImages/003.jpg
+(1006, 1600)
+1.0
+(1600, 1006)
+Out of Bound: [[[593.9854    113.78297  ]]
+
+ [[  4.4418945 252.23105  ]]
+
+ [[674.4093    107.74435  ]]
+
+ [[ -8.788818  212.53452  ]]]
+Out of Bound: [[[  746.52496   485.05157]]
+
+ [[  822.5192   1056.4879 ]]
+
+ [[  714.2483    396.81778]]
+
+ [[  527.21124 -6304.91   ]]]
+Not enough matches are found - 3/5
+Not enough matches are found - 0/5
+Not enough matches are found - 0/5
+Out of Bound: [[[  2101.3237     242.53673]]
+
+ [[  4616.2915     715.9447 ]]
+
+ [[  2129.0159     -77.45698]]
+
+ [[-31481.467    -4657.0513 ]]]
+Not enough matches are found - 1/5
+Not enough matches are found - 0/5
+Not enough matches are found - 4/5
+Not enough matches are found - 0/5
+Out of Bound: [[[861.5505   148.45348 ]]
+
+ [[933.       100.146774]]
+
+ [[891.0127   470.47806 ]]
+
+ [[910.04395  -38.196877]]]
+Not enough matches are found - 0/5
+Bad bounding box: [[[ 605.1009     54.791416]]
+
+ [[1076.5247    228.18715 ]]
+
+ [[ 351.43085    59.870632]]
+
+ [[1443.148     270.20605 ]]]
+Not enough matches are found - 0/5
+Not enough matches are found - 1/5
+Not enough matches are found - 0/5
+Not enough matches are found - 0/5
+Not enough matches are found - 1/5
+003 failed
+Traceback (most recent call last):
+  File "find_waldo.py", line 148, in <module>
+    dst = cv2.perspectiveTransform(pts, M)
+cv2.error: OpenCV(3.4.2) /io/opencv/modules/core/src/matmul.cpp:2268: error: (-215:Assertion failed) scn + 1 == m.cols in function 'perspectiveTransform'
+
+datasets/JPEGImages/018.jpg
+(7015, 9921)
+7.0
+(1417, 1002)
+Out of Bound: [[[  83.24603   84.1045 ]]
+
+ [[ 250.03159   80.39837]]
+
+ [[-559.25073 -158.3616 ]]
+
+ [[-227.47986 -118.82574]]]
+Out of Bound: [[[ 1583.1283    521.3215 ]]
+
+ [[ 1435.211     638.62213]]
+
+ [[16709.678   -7679.961  ]]
+
+ [[ 1574.7631    576.93555]]]
+Not enough matches are found - 0/5
+Not enough matches are found - 2/5
+Not enough matches are found - 2/5
+Not enough matches are found - 0/5
+Not enough matches are found - 3/5
+Not enough matches are found - 0/5
+Too small: [[[809.03925 320.17078]]
+
+ [[811.3316  318.98373]]
+
+ [[816.3021  308.32495]]
+
+ [[811.0929  318.83307]]]
+Not enough matches are found - 4/5
+Out of Bound: [[[ 369.65503  248.46175]]
+
+ [[ 223.581    117.61208]]
+
+ [[ 319.22556  269.25665]]
+
+ [[1063.7854  -554.107  ]]]
+Out of Bound: [[[1500.0946   646.05383]]
+
+ [[1499.6669   648.2639 ]]
+
+ [[1500.5907   646.4852 ]]
+
+ [[1502.5739   650.0645 ]]]
+Not enough matches are found - 3/5
+Not enough matches are found - 4/5
+Not enough matches are found - 0/5
+Not enough matches are found - 0/5
+Not enough matches are found - 2/5
+Not enough matches are found - 4/5
+Not enough matches are found - 0/5
+Not enough matches are found - 5/5
+Not enough matches are found - 2/5
+Not enough matches are found - 2/5
+Not enough matches are found - 0/5
+Out of Bound: [[[ 1586.3728    490.26218]]
+
+ [[-9216.401    -155.89519]]
+
+ [[ 1561.6125    507.58673]]
+
+ [[ 1634.4691    514.3084 ]]]
+Out of Bound: [[[-27442.4       3376.3135 ]]
+
+ [[   435.86163    290.0625 ]]
+
+ [[  1397.5939     435.6342 ]]
+
+ [[  1367.9702     621.11835]]]
+Not enough matches are found - 3/5
+Too small: [[[1397.0215   486.81647]]
+
+ [[1395.5763   487.3769 ]]
+
+ [[1391.8594   487.82816]]
+
+ [[1395.2218   487.68933]]]
+Not enough matches are found - 5/5
+Not enough matches are found - 1/5
+Not enough matches are found - 1/5
+Not enough matches are found - 0/5
+Not enough matches are found - 3/5
+Not enough matches are found - 2/5
+Not enough matches are found - 0/5
+Not enough matches are found - 5/5
+Out of Bound: [[[1302.9563   234.08968]]
+
+ [[2451.0076   492.90082]]
+
+ [[1500.2859   287.7707 ]]
+
+ [[1549.4261   298.98444]]]
+Out of Bound: [[[1603.8224   483.79837]]
+
+ [[1370.3345   787.60754]]
+
+ [[1538.719    448.99048]]
+
+ [[1513.4884   445.0811 ]]]
+Not enough matches are found - 5/5
+Out of Bound: [[[1859.0391   167.15479]]
+
+ [[1462.1766   253.51184]]
+
+ [[1672.9996   211.87906]]
+
+ [[1566.309    223.77773]]]
+Not enough matches are found - 0/5
+Bad bounding box: [[[584.2748  370.13272]]
+
+ [[820.10974 397.5632 ]]
+
+ [[701.3288  356.38528]]
+
+ [[839.0744  384.1177 ]]]
+Out of Bound: [[[ 395.19543 1269.9587 ]]
+
+ [[1021.80505 1222.9825 ]]
+
+ [[-252.31671 2218.4895 ]]
+
+ [[ 427.51547  948.3909 ]]]
+Out of Bound: [[[-1827.9336    6324.902   ]]
+
+ [[ 3760.2239      14.679229]]
+
+ [[  597.5543    1308.5188  ]]
+
+ [[  379.37756    312.48337 ]]]
+Out of Bound: [[[2509.5273   118.76287]]
+
+ [[1470.3065   798.7185 ]]
+
+ [[1695.1174   301.70288]]
+
+ [[ 776.8593   230.08144]]]
+Bad bounding box: [[[615.1721    236.0277   ]]
+
+ [[610.662     135.19759  ]]
+
+ [[619.47705     1.6929036]]
+
+ [[613.92065   175.7555   ]]]
+Not enough matches are found - 3/5
+Not enough matches are found - 3/5
+Not enough matches are found - 0/5
+Not enough matches are found - 0/5
+Bad bounding box: [[[897.5421  315.90155]]
+
+ [[478.08844 319.5852 ]]
+
+ [[770.6422  329.3194 ]]
+
+ [[638.3423  322.26776]]]
+Bad bounding box: [[[149.28102 863.3019 ]]
+
+ [[223.05234 892.62305]]
+
+ [[126.28242 864.3015 ]]
+
+ [[142.72748 882.62634]]]
+Out of Bound: [[[ 1253.9706    279.45575]]
+
+ [[ 5064.352   -5208.9766 ]]
+
+ [[ 1250.6083    290.3922 ]]
+
+ [[ 1360.9688    118.80638]]]
+Out of Bound: [[[ 929.9584  1085.7482 ]]
+
+ [[ 948.64764 1079.2208 ]]
+
+ [[ 943.84985 1046.7423 ]]
+
+ [[1243.7196  -587.9016 ]]]
+Bad bounding box: [[[1082.9897  614.8376]]
+
+ [[1147.343   673.9542]]
+
+ [[1297.4644  844.7308]]
+
+ [[1190.2378  717.4368]]]
+Not enough matches are found - 3/5
+Too small: [[[1236.9043   663.97125]]
+
+ [[1235.6001   664.01984]]
+
+ [[1237.1375   663.9641 ]]
+
+ [[1236.8352   663.9767 ]]]
+Bad bounding box: [[[725.2407  317.11526]]
+
+ [[738.05884 339.75308]]
+
+ [[729.04333 322.9324 ]]
+
+ [[696.25134 254.26273]]]
+Not enough matches are found - 0/5
+Bad bounding box: [[[359.72552  111.14329 ]]
+
+ [[356.22913  108.53925 ]]
+
+ [[354.63007  109.24322 ]]
+
+ [[293.28326   76.607994]]]
+Not enough matches are found - 1/5
+Not enough matches are found - 4/5
+Not enough matches are found - 0/5
+Bad bounding box: [[[368.78586 283.46875]]
+
+ [[781.88367 525.99646]]
+
+ [[543.70044 321.86252]]
+
+ [[813.89215 404.06595]]]
+Not enough matches are found - 0/5
+Out of Bound: [[[1578.1492   684.51605]]
+
+ [[1542.9639   669.1438 ]]
+
+ [[1580.7388   686.1368 ]]
+
+ [[1479.6659   645.32806]]]
+Not enough matches are found - 0/5
+Not enough matches are found - 4/5
+Not enough matches are found - 0/5
+Not enough matches are found - 0/5
+Out of Bound: [[[ 860.6712  -373.95587]]
+
+ [[ 846.13965 -333.30447]]
+
+ [[ 857.7306  -333.45334]]
+
+ [[ 878.7347  -446.12463]]]
+Bad bounding box: [[[1289.6713  658.9222]]
+
+ [[1272.063   640.1731]]
+
+ [[1269.7512  664.9098]]
+
+ [[1240.014   704.3474]]]
+Bad bounding box: [[[411.35645 557.46674]]
+
+ [[433.11026 609.74615]]
+
+ [[449.25262 629.05426]]
+
+ [[437.4281  628.7074 ]]]
+Not enough matches are found - 0/5
+Too small: [[[1233.2107   318.91052]]
+
+ [[1234.9421   318.5613 ]]
+
+ [[1234.4375   318.6416 ]]
+
+ [[1235.4952   318.4902 ]]]
+Too small: [[[698.38184   58.471035]]
+
+ [[691.49945   63.385082]]
+
+ [[702.0523    61.238388]]
+
+ [[698.28125   66.150795]]]
+Not enough matches are found - 3/5
+Not enough matches are found - 1/5
+Not enough matches are found - 0/5
+Not enough matches are found - 2/5
+Not enough matches are found - 4/5
+Out of Bound: [[[1275.87     390.47754]]
+
+ [[1304.8895   423.1908 ]]
+
+ [[1608.1301   777.84607]]
+
+ [[1325.9266   435.4056 ]]]
+Not enough matches are found - 4/5
+Not enough matches are found - 0/5
+Not enough matches are found - 1/5
+Not enough matches are found - 2/5
+Not enough matches are found - 3/5
+Not enough matches are found - 3/5
+Not enough matches are found - 2/5
+Bad bounding box: [[[801.7415  338.01285]]
+
+ [[963.8404  371.95724]]
+
+ [[725.6533  325.03598]]
+
+ [[961.89667 373.14243]]]
+Not enough matches are found - 2/5
+Not enough matches are found - 1/5
+Not enough matches are found - 0/5
+Not enough matches are found - 0/5
+Not enough matches are found - 4/5
+Out of Bound: [[[1122.1443   761.8317 ]]
+
+ [[1521.8163   603.8974 ]]
+
+ [[1533.9639   513.01746]]
+
+ [[2412.48     220.58705]]]
+Not enough matches are found - 2/5
+Bad bounding box: [[[555.1191  321.19284]]
+
+ [[594.1304  366.18378]]
+
+ [[542.12634 321.1524 ]]
+
+ [[331.7534  253.666  ]]]
+Not enough matches are found - 3/5
+Too small: [[[868.23004 131.2371 ]]
+
+ [[867.4263  131.56035]]
+
+ [[888.2575  140.42625]]
+
+ [[867.9899  131.59547]]]
+Bad bounding box: [[[1171.6956   448.41714]]
+
+ [[1149.7229   435.17725]]
+
+ [[1181.1592   450.2913 ]]
+
+ [[1130.189    417.96667]]]
+Not enough matches are found - 0/5
+Not enough matches are found - 0/5
+Not enough matches are found - 0/5
+Out of Bound: [[[ 738.58075  594.87964]]
+
+ [[2001.2479   739.63367]]
+
+ [[ 751.7826   592.07056]]
+
+ [[ 881.6058   629.22473]]]
+Not enough matches are found - 4/5
+Out of Bound: [[[-15067.461     -3350.6694  ]]
+
+ [[   575.3989      310.99042 ]]
+
+ [[   -25.666412    126.0907  ]]
+
+ [[   705.68787     322.11307 ]]]
+Not enough matches are found - 3/5
+Not enough matches are found - 2/5
+Too small: [[[1312.7068   486.86588]]
+
+ [[1312.4583   487.01382]]
+
+ [[1312.6918   486.8592 ]]
+
+ [[1312.6866   486.83603]]]
+Not enough matches are found - 5/5
+Too small: [[[696.0686  318.94513]]
+
+ [[696.8612  320.11   ]]
+
+ [[695.8541  318.63995]]
+
+ [[696.4418  319.5124 ]]]
+Not enough matches are found - 4/5
+Not enough matches are found - 0/5
+Bad bounding box: [[[438.47278   23.349026]]
+
+ [[483.26437  130.65909 ]]
+
+ [[598.1118   257.52325 ]]
+
+ [[480.6721   135.24474 ]]]
+Not enough matches are found - 0/5
+Not enough matches are found - 0/5
+Not enough matches are found - 3/5
+Not enough matches are found - 0/5
+Not enough matches are found - 4/5
+Out of Bound: [[[1445.5159   306.439  ]]
+
+ [[1443.299    305.7759 ]]
+
+ [[1449.5265   307.2349 ]]
+
+ [[1443.2365   305.65518]]]
+Too small: [[[753.08325 888.6666 ]]
+
+ [[751.2648  873.672  ]]
+
+ [[753.91956 897.40155]]
+
+ [[744.8812  811.2447 ]]]
+Bad bounding box: [[[503.39838  137.11296 ]]
+
+ [[510.41986  135.25421 ]]
+
+ [[508.9199   139.1121  ]]
+
+ [[510.4053   125.331665]]]
+Out of Bound: [[[1415.4833   315.63623]]
+
+ [[1316.6902   212.89317]]
+
+ [[1448.1161   272.7471 ]]
+
+ [[1010.0086   273.82062]]]
+Out of Bound: [[[  1307.3955    1032.3687 ]]
+
+ [[   357.7036     978.7572 ]]
+
+ [[   254.79474   4661.6646 ]]
+
+ [[-13862.811     3013.6406 ]]]
+Not enough matches are found - 1/5
+Out of Bound: [[[ 230.78122    25.401583]]
+
+ [[ 348.61084    31.27459 ]]
+
+ [[-221.26071   -12.167421]]
+
+ [[ 239.83464    20.804749]]]
+datasets/JPEGImages/036.jpg
+(4676, 6614)
+5.0
+(1323, 935)
+Too small: [[[551.3939   115.60219 ]]
+
+ [[551.3881   115.60204 ]]
+
+ [[551.3982   115.604195]]
+
+ [[551.37714  115.597305]]]
+Out of Bound: [[[  933.7233     -50.43783 ]]
+
+ [[ 1068.1072     -12.308955]]
+
+ [[ 1063.7599     327.93286 ]]
+
+ [[ 1706.4694   -1581.065   ]]]
+Not enough matches are found - 0/5
+Not enough matches are found - 0/5
+Out of Bound: [[[ 5.1060845e+03 -3.8219717e+02]]
+
+ [[-9.8467102e+00  1.1113747e+02]]
+
+ [[ 1.1700227e+03  1.7846283e+01]]
+
+ [[-2.5626605e+04  1.8176892e+03]]]
+Not enough matches are found - 0/5
+Not enough matches are found - 0/5
+Not enough matches are found - 2/5
+Not enough matches are found - 0/5
+Too small: [[[574.49097 115.55938]]
+
+ [[574.16376 115.54942]]
+
+ [[574.5526  115.75771]]
+
+ [[574.1068  115.73272]]]
+Out of Bound: [[[ 550.523     -15.834957]]
+
+ [[ 620.1388    140.94633 ]]
+
+ [[ 559.8895     34.934643]]
+
+ [[ 717.6929   -126.93098 ]]]
+Not enough matches are found - 5/5
+Out of Bound: [[[1023.78644  536.4121 ]]
+
+ [[ 906.703   1394.3922 ]]
+
+ [[1123.5941   614.7056 ]]
+
+ [[ 774.528    578.6143 ]]]
+Not enough matches are found - 3/5
+Not enough matches are found - 1/5
+Not enough matches are found - 0/5
+Not enough matches are found - 0/5
+Not enough matches are found - 4/5
+Out of Bound: [[[  321.5465    534.3664 ]]
+
+ [[  372.614     843.84076]]
+
+ [[  678.16296  1353.9817 ]]
+
+ [[-1178.8503    921.49097]]]
+Not enough matches are found - 0/5
+Out of Bound: [[[-150.21371  257.00195]]
+
+ [[ 524.95654  781.81476]]
+
+ [[ 255.20616  501.65207]]
+
+ [[ 558.2086  -313.0283 ]]]
+Too small: [[[427.14398  122.743515]]
+
+ [[425.15677  122.92436 ]]
+
+ [[427.4596   122.93887 ]]
+
+ [[425.30292  122.71825 ]]]
+Not enough matches are found - 1/5
+Not enough matches are found - 0/5
+Out of Bound: [[[ 938.5826   891.17206]]
+
+ [[1610.454   -738.0716 ]]
+
+ [[1375.5044  1488.3652 ]]
+
+ [[1096.7441   182.00826]]]
+Not enough matches are found - 3/5
+Not enough matches are found - 2/5
+Out of Bound: [[[1611.027      31.120756]]
+
+ [[1611.0256     31.124626]]
+
+ [[1611.0236     31.123758]]
+
+ [[1611.03       31.124708]]]
+Not enough matches are found - 4/5
+Not enough matches are found - 0/5
+Not enough matches are found - 1/5
+Not enough matches are found - 0/5
+Not enough matches are found - 1/5
+Not enough matches are found - 1/5
+Not enough matches are found - 2/5
+Not enough matches are found - 0/5
+Out of Bound: [[[ 975.90424 -175.29866]]
+
+ [[1187.8467   -94.66385]]
+
+ [[ 769.25507  123.13809]]
+
+ [[1618.077   -503.34518]]]
+Not enough matches are found - 3/5
+Not enough matches are found - 4/5
+Not enough matches are found - 1/5
+Not enough matches are found - 2/5
+Not enough matches are found - 0/5
+Out of Bound: [[[   339.78943   1021.8742 ]]
+
+ [[   301.03702    964.5246 ]]
+
+ [[111921.57    -86399.01   ]]
+
+ [[   448.12146    913.52966]]]
+Out of Bound: [[[-13264.022    21225.37   ]]
+
+ [[  -602.27997    283.1784 ]]
+
+ [[   390.5498     889.982  ]]
+
+ [[  1586.1427     906.3974 ]]]
+Bad bounding box: [[[346.444   110.42391]]
+
+ [[311.71304  70.01907]]
+
+ [[337.03198 111.1552 ]]
+
+ [[422.73932 192.669  ]]]
+Too small: [[[849.8697 572.2147]]
+
+ [[843.6575 574.3814]]
+
+ [[844.4831 573.5683]]
+
+ [[843.8746 574.7988]]]
+Too small: [[[1062.2014     17.791529]]
+
+ [[1057.132      38.091595]]
+
+ [[1059.3901     27.537857]]
+
+ [[1055.4944     42.113457]]]
+Not enough matches are found - 1/5
+Not enough matches are found - 2/5
+Not enough matches are found - 0/5
+Not enough matches are found - 0/5
+Not enough matches are found - 0/5
+Out of Bound: [[[1381.129     439.03375 ]]
+
+ [[ 218.37564   -54.529587]]
+
+ [[ -27.490173  169.38367 ]]
+
+ [[1068.6927   1361.8674  ]]]
+Not enough matches are found - 0/5
+Out of Bound: [[[ 1258.6691    -114.397095]]
+
+ [[  477.4053    -713.2337  ]]
+
+ [[ 2234.3132   -6492.4253  ]]
+
+ [[  838.6235   -2210.482   ]]]
+Not enough matches are found - 4/5
+Out of Bound: [[[-177.47379 1899.2852 ]]
+
+ [[ 693.07745  314.0615 ]]
+
+ [[-798.2182  6083.3066 ]]
+
+ [[ 740.527    277.89478]]]
+Bad bounding box: [[[359.29245  70.84579]]
+
+ [[384.55182 120.44962]]
+
+ [[435.12094 196.76576]]
+
+ [[385.18378 124.79872]]]
+Not enough matches are found - 3/5
+Too small: [[[482.49695  115.771706]]
+
+ [[481.6402   114.6115  ]]
+
+ [[482.36688  115.68452 ]]
+
+ [[481.46848  114.41899 ]]]
+Too small: [[[489.3744  115.60029]]
+
+ [[488.44513 115.73211]]
+
+ [[488.7908  115.56676]]
+
+ [[487.03268 115.89339]]]
+Not enough matches are found - 1/5
+Not enough matches are found - 4/5
+Out of Bound: [[[1528.2153  -140.57887]]
+
+ [[1968.3589  -428.671  ]]
+
+ [[1785.7698  -440.33878]]
+
+ [[1036.4596   840.0933 ]]]
+Not enough matches are found - 1/5
+Too small: [[[292.5626   115.83335 ]]
+
+ [[292.48322  115.69666 ]]
+
+ [[292.43723  115.65474 ]]
+
+ [[292.3923   115.575226]]]
+036 failed
+Traceback (most recent call last):
+  File "find_waldo.py", line 148, in <module>
+    dst = cv2.perspectiveTransform(pts, M)
+cv2.error: OpenCV(3.4.2) /io/opencv/modules/core/src/matmul.cpp:2268: error: (-215:Assertion failed) scn + 1 == m.cols in function 'perspectiveTransform'
+
+datasets/JPEGImages/043.jpg
+(7015, 4960)
+5.0
+(992, 1403)
+Out of Bound: [[[561.1827   78.27062]]
+
+ [[586.2023  540.105  ]]
+
+ [[992.0983  489.88968]]
+
+ [[942.8341   70.6727 ]]]
+Out of Bound: [[[ 248.64978  353.99496]]
+
+ [[ 318.89304  416.36978]]
+
+ [[1425.5242  1747.842  ]]
+
+ [[ 255.8595   286.60123]]]
+Not enough matches are found - 0/5
+Not enough matches are found - 0/5
+Out of Bound: [[[  843.1895   1282.3643 ]]
+
+ [[ 1700.2491  -1205.2449 ]]
+
+ [[  748.94916  -184.53783]]
+
+ [[  741.02374   902.21655]]]
+Not enough matches are found - 0/5
+Not enough matches are found - 0/5
+Not enough matches are found - 4/5
+Not enough matches are found - 1/5
+Out of Bound: [[[ -724.63306  1846.901  ]]
+
+ [[ 1289.6641    681.216  ]]
+
+ [[ 1356.5051    585.80774]]
+
+ [[ -218.11578 -1631.6929 ]]]
+Not enough matches are found - 5/5
+Out of Bound: [[[   864.54626   1685.5955 ]]
+
+ [[ -5443.972   -30794.488  ]]
+
+ [[   835.4955    1371.6284 ]]
+
+ [[   888.44617   1522.072  ]]]
+Out of Bound: [[[1176.7906   584.3284 ]]
+
+ [[1143.911    781.9081 ]]
+
+ [[1169.8484   593.8947 ]]
+
+ [[1167.4861   574.29785]]]
+Not enough matches are found - 3/5
+Not enough matches are found - 0/5
+Not enough matches are found - 0/5
+Not enough matches are found - 0/5
+Not enough matches are found - 5/5
+Not enough matches are found - 0/5
+Not enough matches are found - 2/5
+Not enough matches are found - 3/5
+Not enough matches are found - 0/5
+Not enough matches are found - 0/5
+Not enough matches are found - 0/5
+Not enough matches are found - 4/5
+Not enough matches are found - 0/5
+Out of Bound: [[[1631.1711  693.2995]]
+
+ [[1781.886   925.9299]]
+
+ [[1465.2847  597.5251]]
+
+ [[1757.0642  902.6286]]]
+Not enough matches are found - 4/5
+Not enough matches are found - 0/5
+Not enough matches are found - 2/5
+Not enough matches are found - 1/5
+Not enough matches are found - 1/5
+Not enough matches are found - 1/5
+Not enough matches are found - 2/5
+Not enough matches are found - 0/5
+Out of Bound: [[[ 875.63525 1537.0503 ]]
+
+ [[1036.7659  1298.5865 ]]
+
+ [[ 863.42523 1421.0083 ]]
+
+ [[ 521.43555 2953.3096 ]]]
+Not enough matches are found - 4/5
+Out of Bound: [[[404.36935   271.09073  ]]
+
+ [[528.2873     42.652927 ]]
+
+ [[598.58057    -1.4632235]]
+
+ [[428.12003   -10.532902 ]]]
+Not enough matches are found - 2/5
+Bad bounding box: [[[ 859.22894  592.3978 ]]
+
+ [[ 702.3313   254.0881 ]]
+
+ [[ 880.0468   484.8885 ]]
+
+ [[ 941.6914  1096.1249 ]]]
+Not enough matches are found - 0/5
+Out of Bound: [[[ 1100.1025   -318.61887]]
+
+ [[ 1161.5892   1151.5957 ]]
+
+ [[  985.4656  -7128.583  ]]
+
+ [[ 1117.6023    362.0269 ]]]
+Out of Bound: [[[ 2711.141    -1702.9707  ]]
+
+ [[    9.981415 -1195.2563  ]]
+
+ [[  550.29553    953.5137  ]]
+
+ [[  916.39935   1282.1968  ]]]
+Out of Bound: [[[-5147.9995      71.53099 ]]
+
+ [[  621.2593      84.311516]]
+
+ [[  373.94684    113.76049 ]]
+
+ [[  691.10876     73.10004 ]]]
+Out of Bound: [[[-3893.7397    197.38507]]
+
+ [[ 2254.7524   -890.77856]]
+
+ [[  591.4812    135.45145]]
+
+ [[  906.5418     24.90404]]]
+Out of Bound: [[[1086.9043   364.46033]]
+
+ [[1132.5154   333.48013]]
+
+ [[1064.8081   338.89642]]
+
+ [[1126.7694   313.70605]]]
+Not enough matches are found - 0/5
+Not enough matches are found - 2/5
+Not enough matches are found - 0/5
+Not enough matches are found - 4/5
+Not enough matches are found - 0/5
+Out of Bound: [[[ 1084.7585      -3.361828]]
+
+ [[  135.22116   3171.656   ]]
+
+ [[  629.1647    1249.4839  ]]
+
+ [[ 1192.1309   -1701.6742  ]]]
+Not enough matches are found - 0/5
+Bad bounding box: [[[305.9296   106.428665]]
+
+ [[291.64337  132.02492 ]]
+
+ [[309.24463  110.298805]]
+
+ [[315.1902   109.58419 ]]]
+Not enough matches are found - 3/5
+Not enough matches are found - 4/5
+Bad bounding box: [[[591.87195 875.09644]]
+
+ [[589.5636  824.54193]]
+
+ [[589.18774 850.01337]]
+
+ [[588.5609  827.40314]]]
+Not enough matches are found - 1/5
+Out of Bound: [[[ 910.2704   1132.1246  ]]
+
+ [[ 773.6703    872.9292  ]]
+
+ [[ 357.10138   -62.823364]]
+
+ [[ 826.5604    968.5484  ]]]
+Out of Bound: [[[ 894.8089   210.71622]]
+
+ [[ 525.8584   518.38354]]
+
+ [[1492.5675  -453.865  ]]
+
+ [[ 596.0053   421.61948]]]
+Not enough matches are found - 2/5
+Out of Bound: [[[1413.108   1162.7524 ]]
+
+ [[ 386.8329   458.57172]]
+
+ [[ 240.87866  424.09222]]
+
+ [[ 173.84166 -218.8587 ]]]
+Out of Bound: [[[  861.0828      94.775154]]
+
+ [[ 1422.5371     557.8545  ]]
+
+ [[-1314.1904    6725.7     ]]
+
+ [[-1468.0142    2456.659   ]]]
+Not enough matches are found - 0/5
+Out of Bound: [[[ 226.1643   731.56537]]
+
+ [[ 501.59903 1324.4359 ]]
+
+ [[-586.19727  269.9057 ]]
+
+ [[ 263.5904   356.39658]]]
+Not enough matches are found - 5/5
+Not enough matches are found - 0/5
+Too small: [[[542.3364   103.29135 ]]
+
+ [[563.4347    83.53536 ]]
+
+ [[534.7694   120.39431 ]]
+
+ [[558.47      95.099976]]]
+Not enough matches are found - 0/5
+Out of Bound: [[[ -4872.7397    -147.11   ]]
+
+ [[-31429.074   -11096.46   ]]
+
+ [[ -1707.5924     231.74971]]
+
+ [[ -1356.2157      60.07347]]]
+Not enough matches are found - 0/5
+Out of Bound: [[[1174.97     1448.6554  ]]
+
+ [[ 520.40564  2943.7505  ]]
+
+ [[ -67.772156  329.43503 ]]
+
+ [[ 554.7427    268.14557 ]]]
+Not enough matches are found - 0/5
+Not enough matches are found - 0/5
+Too small: [[[ 626.9145  1247.1117 ]]
+
+ [[ 654.2949  1280.4623 ]]
+
+ [[ 620.94995 1196.0359 ]]
+
+ [[ 656.6225  1300.9453 ]]]
+Out of Bound: [[[1215.8605  -383.61496]]
+
+ [[1017.0384   361.56577]]
+
+ [[ 961.40295  295.98557]]
+
+ [[ 829.0935   786.616  ]]]
+Not enough matches are found - 3/5
+Not enough matches are found - 0/5
+Out of Bound: [[[ 2374.2834   1797.3326 ]]
+
+ [[16393.943    9965.458  ]]
+
+ [[ 1257.073     309.11084]]
+
+ [[ 1875.9894    938.56836]]]
+Too small: [[[747.17914 921.17145]]
+
+ [[747.1773  921.16205]]
+
+ [[747.16095 921.11865]]
+
+ [[747.1781  921.1576 ]]]
+Not enough matches are found - 0/5
+Out of Bound: [[[1465.0254 2094.5078]]
+
+ [[ 629.9965  885.5994]]
+
+ [[1123.6006 1394.989 ]]
+
+ [[1590.2644 1335.8379]]]
+Out of Bound: [[[ 405.12363  239.7813 ]]
+
+ [[ 281.94122  336.04358]]
+
+ [[-406.47723  -25.78208]]
+
+ [[ 511.53232  234.45212]]]
+Out of Bound: [[[ 354.50183    63.408348]]
+
+ [[ 593.1298   -125.07565 ]]
+
+ [[ -20.19168  -207.51004 ]]
+
+ [[ 529.72437   -15.2428  ]]]
+Not enough matches are found - 3/5
+Not enough matches are found - 0/5
+Not enough matches are found - 0/5
+Not enough matches are found - 0/5
+Not enough matches are found - 1/5
+Not enough matches are found - 2/5
+Not enough matches are found - 3/5
+Out of Bound: [[[425.57742   37.416794]]
+
+ [[541.93823  472.8734  ]]
+
+ [[906.5375   436.5586  ]]
+
+ [[994.0149   -21.529806]]]
+Not enough matches are found - 2/5
+Not enough matches are found - 3/5
+Not enough matches are found - 0/5
+Not enough matches are found - 1/5
+Not enough matches are found - 3/5
+Not enough matches are found - 5/5
+Not enough matches are found - 1/5
+Out of Bound: [[[-679.9674  1547.0673 ]]
+
+ [[ 801.69586 1402.0701 ]]
+
+ [[ 297.78607  985.5886 ]]
+
+ [[-222.97632  325.59644]]]
+Not enough matches are found - 1/5
+Out of Bound: [[[ 751.51575  100.38745]]
+
+ [[ 735.24384  512.46155]]
+
+ [[1135.5618   528.27686]]
+
+ [[1121.3988    97.30617]]]
+Out of Bound: [[[ 919.5405   938.0809 ]]
+
+ [[1135.7097   460.16824]]
+
+ [[1081.125   1026.3936 ]]
+
+ [[1259.7893   494.95425]]]
+Not enough matches are found - 0/5
+Not enough matches are found - 0/5
+Not enough matches are found - 1/5
+Not enough matches are found - 5/5
+Not enough matches are found - 2/5
+Not enough matches are found - 3/5
+Not enough matches are found - 4/5
+Not enough matches are found - 1/5
+Too small: [[[ 954.0213  1285.0502 ]]
+
+ [[ 953.92523 1285.0361 ]]
+
+ [[ 960.51544 1279.1746 ]]
+
+ [[ 954.2406  1284.8082 ]]]
+Not enough matches are found - 1/5
+Out of Bound: [[[ 1193.2756    356.62173]]
+
+ [[ 1227.5896    963.12775]]
+
+ [[ 4119.913   -1236.605  ]]
+
+ [[  515.5556    256.83652]]]
+Not enough matches are found - 3/5
+Not enough matches are found - 4/5
+Not enough matches are found - 0/5
+Not enough matches are found - 0/5
+Not enough matches are found - 1/5
+Not enough matches are found - 0/5
+Out of Bound: [[[ 270.78793 -514.79285]]
+
+ [[ 404.91287  969.05865]]
+
+ [[ 640.83685 1545.135  ]]
+
+ [[ 362.72345 1058.9862 ]]]
+Bad bounding box: [[[699.3203  444.2933 ]]
+
+ [[539.4248  486.9435 ]]
+
+ [[529.8663  459.08728]]
+
+ [[605.4221  460.08804]]]
+Out of Bound: [[[ 640.6194  -124.7587 ]]
+
+ [[ 600.21967  282.41034]]
+
+ [[ 604.8695   248.03618]]
+
+ [[ 599.18396  300.3632 ]]]
+Out of Bound: [[[1266.479    756.77094]]
+
+ [[1220.4617   733.911  ]]
+
+ [[1240.0775   735.39056]]
+
+ [[1194.1062   709.27856]]]
+Not enough matches are found - 4/5
+Not enough matches are found - 5/5
+Not enough matches are found - 2/5
+datasets/JPEGImages/038.jpg
+(7015, 9921)
+7.0
+(1417, 1002)
+Out of Bound: [[[1723.8811   588.32574]]
+
+ [[1662.4647   835.1499 ]]
+
+ [[1666.7688   821.9657 ]]
+
+ [[1662.0037   838.59644]]]
+Bad bounding box: [[[1098.1492   441.23206]]
+
+ [[ 965.4436   311.21088]]
+
+ [[ 898.0614   249.58826]]
+
+ [[ 945.1401   293.41736]]]
+Not enough matches are found - 0/5
+Not enough matches are found - 0/5
+Too small: [[[575.40424 963.0356 ]]
+
+ [[566.3653  961.0903 ]]
+
+ [[578.0681  963.8139 ]]
+
+ [[567.8417  961.60767]]]
+Not enough matches are found - 0/5
+Not enough matches are found - 0/5
+Not enough matches are found - 1/5
+Not enough matches are found - 2/5
+Bad bounding box: [[[1144.8933   701.7487 ]]
+
+ [[1148.2874   691.131  ]]
+
+ [[1160.4081   689.6276 ]]
+
+ [[1144.7131   697.60675]]]
+Not enough matches are found - 4/5
+Out of Bound: [[[ 2415.5298    345.47476]]
+
+ [[ 1159.4731    873.9582 ]]
+
+ [[ 1561.8457    567.05365]]
+
+ [[  559.43317 -7725.7646 ]]]
+Out of Bound: [[[1604.4235   531.94965]]
+
+ [[1549.1823   512.61816]]
+
+ [[1572.7056   531.24536]]
+
+ [[1616.9727   583.15967]]]
+Not enough matches are found - 2/5
+Not enough matches are found - 4/5
+Not enough matches are found - 0/5
+Not enough matches are found - 3/5
+Out of Bound: [[[ 545.3303     14.979982]]
+
+ [[ 558.8301     35.607574]]
+
+ [[ 223.22168  -287.5401  ]]
+
+ [[ 556.70935    39.102024]]]
+Out of Bound: [[[ 848.0095    567.71    ]]
+
+ [[1108.4995    238.91817 ]]
+
+ [[1890.7556    568.3691  ]]
+
+ [[1364.087      51.602863]]]
+Not enough matches are found - 0/5
+Bad bounding box: [[[758.7561  778.57513]]
+
+ [[609.10345 465.51266]]
+
+ [[704.25287 583.9999 ]]
+
+ [[648.3047  481.56592]]]
+Out of Bound: [[[ 1962.7976    778.56384]]
+
+ [[ 1112.7683    278.41525]]
+
+ [[-3749.0999  -1022.889  ]]
+
+ [[ 2193.5247   1733.9514 ]]]
+Not enough matches are found - 1/5
+Not enough matches are found - 0/5
+Out of Bound: [[[ 578.665    406.9792 ]]
+
+ [[-360.39313 -348.39725]]
+
+ [[ 284.59406  207.09743]]
+
+ [[1555.1449  1266.6609 ]]]
+Out of Bound: [[[   91.63788  1291.5834 ]]
+
+ [[  919.96246   837.1646 ]]
+
+ [[  657.619     942.0049 ]]
+
+ [[-1819.2135   1074.5455 ]]]
+Not enough matches are found - 2/5
+Too small: [[[1141.4159   962.4501 ]]
+
+ [[1141.351    962.5361 ]]
+
+ [[1141.2832   962.5552 ]]
+
+ [[1141.1387   962.64465]]]
+Not enough matches are found - 2/5
+Not enough matches are found - 0/5
+Not enough matches are found - 3/5
+Not enough matches are found - 0/5
+Not enough matches are found - 3/5
+Not enough matches are found - 2/5
+Not enough matches are found - 2/5
+Not enough matches are found - 1/5
+Out of Bound: [[[1058.5286   918.1598 ]]
+
+ [[1556.5586   922.52954]]
+
+ [[1373.2821  1020.76086]]
+
+ [[ 411.48297  843.88556]]]
+Too small: [[[1026.9324   698.8711 ]]
+
+ [[1030.0376   697.8011 ]]
+
+ [[1024.994    698.64905]]
+
+ [[1043.1108   698.19196]]]
+Out of Bound: [[[1554.6676   817.559  ]]
+
+ [[1629.5946   923.5773 ]]
+
+ [[1573.3835   847.18994]]
+
+ [[5931.2417  6644.7495 ]]]
+Not enough matches are found - 0/5
+Not enough matches are found - 5/5
+Not enough matches are found - 2/5
+Bad bounding box: [[[ 944.33594  723.88385]]
+
+ [[ 942.95685  615.31274]]
+
+ [[1004.7775   712.07477]]
+
+ [[ 810.60486  654.76135]]]
+Out of Bound: [[[-346.19037  261.39087]]
+
+ [[2030.0085  1862.868  ]]
+
+ [[3953.4382  3582.8694 ]]
+
+ [[1401.0917  1208.1962 ]]]
+Out of Bound: [[[ 1218.9475    472.9482 ]]
+
+ [[ 2340.1677   -583.8778 ]]
+
+ [[ 1280.047     431.11975]]
+
+ [[ 5710.6064  -3391.8828 ]]]
+038 failed
+Traceback (most recent call last):
+  File "find_waldo.py", line 148, in <module>
+    dst = cv2.perspectiveTransform(pts, M)
+cv2.error: OpenCV(3.4.2) /io/opencv/modules/core/src/matmul.cpp:2268: error: (-215:Assertion failed) scn + 1 == m.cols in function 'perspectiveTransform'
+
+datasets/JPEGImages/056.jpg
+(980, 1600)
+1.0
+(1600, 980)
+Not enough matches are found - 4/5
+Not enough matches are found - 5/5
+Not enough matches are found - 0/5
+Not enough matches are found - 1/5
+Out of Bound: [[[1347.6971  -789.73865]]
+
+ [[1307.8231   411.64026]]
+
+ [[1313.1962   410.46185]]
+
+ [[1305.7854   412.56842]]]
+Not enough matches are found - 0/5
+Not enough matches are found - 0/5
+Not enough matches are found - 3/5
+Not enough matches are found - 2/5
+Out of Bound: [[[1590.3746   875.0482 ]]
+
+ [[6297.06    9895.86   ]]
+
+ [[1597.5464   946.02966]]
+
+ [[1612.9805   892.5348 ]]]
+Not enough matches are found - 1/5
+Bad bounding box: [[[1219.1499  302.5302]]
+
+ [[ 642.8373  784.3117]]
+
+ [[ 831.7559  509.94  ]]
+
+ [[ 573.9063  750.8544]]]
+Out of Bound: [[[ 1711.6348    292.16245]]
+
+ [[ 2145.7246   -758.72797]]
+
+ [[-2154.9639   -373.04977]]
+
+ [[ 1179.3499    158.60371]]]
+Not enough matches are found - 0/5
+Not enough matches are found - 3/5
+Not enough matches are found - 0/5
+Not enough matches are found - 0/5
+Not enough matches are found - 4/5
+Not enough matches are found - 2/5
+Not enough matches are found - 0/5
+Not enough matches are found - 3/5
+Not enough matches are found - 4/5
+Not enough matches are found - 0/5
+Not enough matches are found - 0/5
+Not enough matches are found - 5/5
+Not enough matches are found - 3/5
+Not enough matches are found - 1/5
+Too small: [[[847.9094  379.82327]]
+
+ [[850.5419  380.40942]]
+
+ [[849.1499  380.31293]]
+
+ [[848.19495 380.5761 ]]]
+Not enough matches are found - 2/5
+Not enough matches are found - 0/5
+Not enough matches are found - 1/5
+Not enough matches are found - 0/5
+Not enough matches are found - 2/5
+Not enough matches are found - 1/5
+Not enough matches are found - 0/5
+Not enough matches are found - 0/5
+Not enough matches are found - 3/5
+Not enough matches are found - 2/5
+Not enough matches are found - 2/5
+Not enough matches are found - 0/5
+Not enough matches are found - 1/5
+Not enough matches are found - 0/5
+Not enough matches are found - 4/5
+Not enough matches are found - 1/5
+Out of Bound: [[[ 593.2391   809.18115]]
+
+ [[1698.3821  1691.515  ]]
+
+ [[ 914.8655   657.0444 ]]
+
+ [[1040.4343   480.96915]]]
+Not enough matches are found - 5/5
+Too small: [[[1038.8501   850.3854 ]]
+
+ [[1039.3792   850.30206]]
+
+ [[1038.1943   850.3944 ]]
+
+ [[1039.0247   850.2956 ]]]
+Not enough matches are found - 1/5
+Not enough matches are found - 3/5
+Not enough matches are found - 0/5
+Not enough matches are found - 0/5
+Not enough matches are found - 0/5
+Out of Bound: [[[1690.1741   193.20557]]
+
+ [[1687.6628   219.26819]]
+
+ [[1752.6267   237.93626]]
+
+ [[1671.7878   223.72612]]]
+Not enough matches are found - 5/5
+056 failed
+Traceback (most recent call last):
+  File "find_waldo.py", line 148, in <module>
+    dst = cv2.perspectiveTransform(pts, M)
+cv2.error: OpenCV(3.4.2) /io/opencv/modules/core/src/matmul.cpp:2268: error: (-215:Assertion failed) scn + 1 == m.cols in function 'perspectiveTransform'
+
+datasets/JPEGImages/067.jpg
+(7015, 9921)
+7.0
+(1417, 1002)
+Out of Bound: [[[-1924.793    2113.8062 ]]
+
+ [[  184.74243   729.32947]]
+
+ [[ -745.0526   1365.1119 ]]
+
+ [[ -767.0753   1316.4312 ]]]
+Not enough matches are found - 0/5
+Not enough matches are found - 0/5
+Bad bounding box: [[[582.17883 857.29895]]
+
+ [[829.3563  841.3293 ]]
+
+ [[530.53723 861.6454 ]]
+
+ [[665.87354 852.8629 ]]]
+Not enough matches are found - 0/5
+Not enough matches are found - 0/5
+Bad bounding box: [[[908.104   801.25146]]
+
+ [[873.63635 951.5474 ]]
+
+ [[913.51636 827.6815 ]]
+
+ [[879.28015 901.7139 ]]]
+Not enough matches are found - 1/5
+Out of Bound: [[[1502.3579    69.50074]]
+
+ [[1501.8798    69.46093]]
+
+ [[1499.9622    69.85569]]
+
+ [[1501.9609    69.12486]]]
+Not enough matches are found - 3/5
+Not enough matches are found - 5/5
+Bad bounding box: [[[300.99487 356.90924]]
+
+ [[335.25397 335.6016 ]]
+
+ [[280.12338 362.28336]]
+
+ [[284.60687 373.31232]]]
+Not enough matches are found - 1/5
+Not enough matches are found - 4/5
+Not enough matches are found - 0/5
+Not enough matches are found - 2/5
+Out of Bound: [[[ 1439.4802    743.06494]]
+
+ [[ 1511.6444    560.94855]]
+
+ [[ 1560.0558    766.2035 ]]
+
+ [[ 8676.905   -3748.0957 ]]]
+Not enough matches are found - 4/5
+Not enough matches are found - 0/5
+Not enough matches are found - 5/5
+Out of Bound: [[[1673.1886   553.0921 ]]
+
+ [[ 900.75574 -571.99225]]
+
+ [[1764.2441   530.03894]]
+
+ [[1681.7887   842.77545]]]
+Not enough matches are found - 2/5
+Not enough matches are found - 0/5
+Out of Bound: [[[ 524.2972     48.217415]]
+
+ [[-590.317     -95.85521 ]]
+
+ [[ 207.30235   402.43698 ]]
+
+ [[ 349.65973    60.722027]]]
+Not enough matches are found - 5/5
+Not enough matches are found - 2/5
+Out of Bound: [[[1950.8245   797.12585]]
+
+ [[1954.4879   773.1177 ]]
+
+ [[1955.1727   772.6477 ]]
+
+ [[1952.8282   771.7435 ]]]
+Not enough matches are found - 1/5
+Not enough matches are found - 0/5
+Not enough matches are found - 1/5
+Not enough matches are found - 0/5
+Not enough matches are found - 1/5
+Not enough matches are found - 1/5
+Not enough matches are found - 2/5
+Not enough matches are found - 0/5
+Not enough matches are found - 2/5
+Not enough matches are found - 2/5
+Out of Bound: [[[2135.3442   -58.94331]]
+
+ [[1745.2231   540.23065]]
+
+ [[1564.7894   466.69644]]
+
+ [[1577.9302   648.9526 ]]]
+Not enough matches are found - 3/5
+Out of Bound: [[[ 3124.8281    908.8781 ]]
+
+ [[-1323.1537   -748.77783]]
+
+ [[ 1917.9326    499.2498 ]]
+
+ [[ 4686.4043   1653.5508 ]]]
+Not enough matches are found - 0/5
+Out of Bound: [[[ 1493.3733     330.35696 ]]
+
+ [[ 1010.39264     90.276215]]
+
+ [[-3143.8032    -248.78607 ]]
+
+ [[  982.20447    -89.11704 ]]]
+Not enough matches are found - 5/5
+Out of Bound: [[[  949.6707    169.56503]]
+
+ [[  255.50717  -612.2967 ]]
+
+ [[  993.50885   172.85115]]
+
+ [[ 3498.8909  -1120.6328 ]]]
+Too small: [[[1032.8502   826.02405]]
+
+ [[1055.584    824.63257]]
+
+ [[1019.6207   826.7176 ]]
+
+ [[1048.8325   825.0053 ]]]
+Out of Bound: [[[ 516.34753   98.44917]]
+
+ [[3368.063   1876.7002 ]]
+
+ [[ 586.088    188.39507]]
+
+ [[ 258.95242   57.10791]]]
+Not enough matches are found - 4/5
+Not enough matches are found - 1/5
+Not enough matches are found - 0/5
+Not enough matches are found - 3/5
+Not enough matches are found - 0/5
+Too small: [[[1060.207    825.4192 ]]
+
+ [[1060.1528   825.3447 ]]
+
+ [[1060.3367   825.3935 ]]
+
+ [[1060.036    825.38385]]]
+Not enough matches are found - 5/5
+Out of Bound: [[[-793.26855 -481.48373]]
+
+ [[1919.506   2143.656  ]]
+
+ [[1958.0381  1939.7157 ]]
+
+ [[1653.6287  1773.2108 ]]]
+Not enough matches are found - 2/5
+Out of Bound: [[[ 966.09436  667.6181 ]]
+
+ [[1056.1287   519.35645]]
+
+ [[ 972.3512   708.743  ]]
+
+ [[ 865.7977  1046.6096 ]]]
+Out of Bound: [[[1564.5269   937.7894 ]]
+
+ [[1530.1576   775.80194]]
+
+ [[1539.7184   836.9761 ]]
+
+ [[1529.6821   751.4009 ]]]
+Not enough matches are found - 1/5
+Out of Bound: [[[1436.4807     52.027203]]
+
+ [[1420.7668     74.40637 ]]
+
+ [[1427.3644     69.77428 ]]
+
+ [[1425.6141     71.675385]]]
+Out of Bound: [[[1432.8945    71.27155]]
+
+ [[1411.2585    75.56434]]
+
+ [[1431.5948    71.78903]]
+
+ [[1418.9142    75.4524 ]]]
+Not enough matches are found - 1/5
+Out of Bound: [[[  983.42957  1571.0314 ]]
+
+ [[-1542.4121  -1804.5074 ]]
+
+ [[  805.41046   706.41876]]
+
+ [[ 1355.5414    294.0416 ]]]
+Out of Bound: [[[1417.8184   767.66785]]
+
+ [[2976.274    533.6376 ]]
+
+ [[1350.9695   773.11945]]
+
+ [[1418.182    761.62274]]]
+Not enough matches are found - 4/5
+Bad bounding box: [[[418.60672   84.84161 ]]
+
+ [[420.16248   60.314453]]
+
+ [[966.5644    60.039993]]
+
+ [[409.2314    58.230957]]]
+Out of Bound: [[[ 1584.9117      80.519966]]
+
+ [[  881.2302    3304.9946  ]]
+
+ [[ 2980.337    -3351.521   ]]
+
+ [[ -380.70807   1192.3329  ]]]
+Not enough matches are found - 0/5
+Out of Bound: [[[1667.2125  1024.5458 ]]
+
+ [[1323.7484   545.8456 ]]
+
+ [[ 115.67323 -598.26855]]
+
+ [[2382.5935  1195.9814 ]]]
+Not enough matches are found - 1/5
+Out of Bound: [[[1261.7859    586.605   ]]
+
+ [[ 746.81976   533.9293  ]]
+
+ [[1408.3403    538.83234 ]]
+
+ [[5762.4165   -123.902214]]]
+Not enough matches are found - 1/5
+Out of Bound: [[[ 1368.2638    263.14246]]
+
+ [[ 1211.9646    398.70715]]
+
+ [[ 1524.2747    149.44978]]
+
+ [[ 1026.6357  -1723.8708 ]]]
+Not enough matches are found - 0/5
+Not enough matches are found - 0/5
+Out of Bound: [[[1510.5013     67.76024 ]]
+
+ [[1503.9572     67.281654]]
+
+ [[1767.5594     68.35423 ]]
+
+ [[1483.5986     59.904274]]]
+Bad bounding box: [[[1181.7295   888.86664]]
+
+ [[1219.1729   800.497  ]]
+
+ [[1197.3677   842.98694]]
+
+ [[1147.574    915.04877]]]
+Bad bounding box: [[[648.2455  551.3845 ]]
+
+ [[461.0966  368.3431 ]]
+
+ [[172.94876 266.3813 ]]
+
+ [[423.16147 379.24295]]]
+Not enough matches are found - 0/5
+Out of Bound: [[[2038.7893   776.9315 ]]
+
+ [[2042.0421   770.7038 ]]
+
+ [[2047.8353   770.76654]]
+
+ [[2044.579    771.19824]]]
+Out of Bound: [[[1776.0623   219.46648]]
+
+ [[1775.9639   219.54681]]
+
+ [[1776.2384   219.43181]]
+
+ [[1776.1958   219.49739]]]
+Not enough matches are found - 0/5
+Not enough matches are found - 2/5
+Too small: [[[1259.7255     64.642784]]
+
+ [[1278.8654     68.10574 ]]
+
+ [[1268.9734     67.02335 ]]
+
+ [[1276.4381     66.45943 ]]]
+Not enough matches are found - 3/5
+Out of Bound: [[[1390.6609   -115.179756]]
+
+ [[1895.179    -185.02069 ]]
+
+ [[ 189.70316  2137.4216  ]]
+
+ [[1074.693     543.6663  ]]]
+Not enough matches are found - 0/5
+Not enough matches are found - 0/5
+Not enough matches are found - 0/5
+Not enough matches are found - 3/5
+Not enough matches are found - 5/5
+Not enough matches are found - 3/5
+Out of Bound: [[[   817.725        29.791115]]
+
+ [[-11611.379     -5951.382   ]]
+
+ [[  -296.4646     -609.17163 ]]
+
+ [[ 15190.101      7100.2925  ]]]
+Not enough matches are found - 4/5
+Not enough matches are found - 2/5
+Not enough matches are found - 0/5
+Not enough matches are found - 0/5
+Not enough matches are found - 1/5
+Not enough matches are found - 5/5
+Not enough matches are found - 2/5
+067 failed
+Traceback (most recent call last):
+  File "find_waldo.py", line 148, in <module>
+    dst = cv2.perspectiveTransform(pts, M)
+cv2.error: OpenCV(3.4.2) /io/opencv/modules/core/src/matmul.cpp:2268: error: (-215:Assertion failed) scn + 1 == m.cols in function 'perspectiveTransform'
+
+datasets/JPEGImages/074.jpg
+(7015, 9921)
+7.0
+(1417, 1002)
+Out of Bound: [[[ 390.22272    65.29438 ]]
+
+ [[1492.8475    254.44678 ]]
+
+ [[-724.0095   -223.6472  ]]
+
+ [[ 562.61255   104.134575]]]
+Out of Bound: [[[ 671.96796  946.96893]]
+
+ [[6785.9863  5279.2705 ]]
+
+ [[-139.50327  913.80945]]
+
+ [[1056.7966  1120.4587 ]]]
+Not enough matches are found - 0/5
+Not enough matches are found - 1/5
+Out of Bound: [[[498.94876 -72.66194]]
+
+ [[388.24426 160.74994]]
+
+ [[654.49756 203.3525 ]]
+
+ [[330.15283 131.19716]]]
+Not enough matches are found - 1/5
+Not enough matches are found - 0/5
+Out of Bound: [[[ 964.6456   -79.29712]]
+
+ [[1535.4705  -200.98073]]
+
+ [[ 956.21857   99.11939]]
+
+ [[1101.6687   123.90341]]]
+Not enough matches are found - 1/5
+Too small: [[[774.60144 190.06749]]
+
+ [[774.615   190.0683 ]]
+
+ [[774.60205 190.06885]]
+
+ [[774.61194 190.06873]]]
+Out of Bound: [[[1511.9089   523.3136 ]]
+
+ [[1578.0819   887.02844]]
+
+ [[1926.5835   780.80396]]
+
+ [[1145.573   -485.12537]]]
+Bad bounding box: [[[1273.7444   917.4344 ]]
+
+ [[1392.4727   978.70953]]
+
+ [[1274.6993   907.16394]]
+
+ [[1288.177    909.3245 ]]]
+Not enough matches are found - 1/5
+Not enough matches are found - 0/5
+Not enough matches are found - 0/5
+Not enough matches are found - 2/5
+Bad bounding box: [[[274.9603    23.214777]]
+
+ [[325.56058  112.63046 ]]
+
+ [[370.4082   110.89361 ]]
+
+ [[397.21957   40.368732]]]
+Out of Bound: [[[  857.42255   625.27136]]
+
+ [[  544.34485 -1546.0876 ]]
+
+ [[  923.66907   723.8983 ]]
+
+ [[  970.85046   932.66876]]]
+Not enough matches are found - 0/5
+Not enough matches are found - 2/5
+Out of Bound: [[[ 106.574356  963.65234 ]]
+
+ [[ 305.87152   517.34436 ]]
+
+ [[3123.2402   -854.5292  ]]
+
+ [[1230.909     195.77393 ]]]
+Not enough matches are found - 0/5
+Not enough matches are found - 0/5
+Out of Bound: [[[1689.9755    286.536   ]]
+
+ [[1602.9574    184.98819 ]]
+
+ [[ 546.82404   666.8283  ]]
+
+ [[1837.2432    -36.671135]]]
+Bad bounding box: [[[1393.2819     290.75467  ]]
+
+ [[ 981.07294      4.3562284]]
+
+ [[ 921.0045      47.193157 ]]
+
+ [[ 993.38354     39.717674 ]]]
+Not enough matches are found - 0/5
+Out of Bound: [[[1904.3959   758.5707 ]]
+
+ [[1905.2871   757.82056]]
+
+ [[1829.3243   784.1817 ]]
+
+ [[1903.6198   756.8092 ]]]
+Not enough matches are found - 3/5
+Not enough matches are found - 0/5
+Not enough matches are found - 0/5
+Not enough matches are found - 0/5
+Not enough matches are found - 1/5
+Not enough matches are found - 0/5
+Not enough matches are found - 1/5
+Not enough matches are found - 0/5
+Not enough matches are found - 5/5
+Too small: [[[772.767   295.17923]]
+
+ [[870.60834 231.37695]]
+
+ [[767.3939  298.86148]]
+
+ [[781.5494  291.02808]]]
+Out of Bound: [[[ 484.55014  594.12756]]
+
+ [[ 470.10156 1023.3331 ]]
+
+ [[4293.0835  3098.623  ]]
+
+ [[ 512.2947   638.4453 ]]]
+Not enough matches are found - 4/5
+Out of Bound: [[[ 1512.3113    800.86005]]
+
+ [[-8983.938   -6293.8726 ]]
+
+ [[ 1407.9274    748.88025]]
+
+ [[ 1192.2875    582.09235]]]
+Not enough matches are found - 0/5
+Not enough matches are found - 2/5
+Out of Bound: [[[ 940.5763     -16.95763  ]]
+
+ [[ 980.08154    -83.32728  ]]
+
+ [[1066.8867      -6.2827005]]
+
+ [[ 975.6832     -55.966324 ]]]
+Out of Bound: [[[1489.7496   837.47797]]
+
+ [[ 577.3698  1579.1115 ]]
+
+ [[1448.2346   788.52826]]
+
+ [[1493.7186   916.50854]]]
+Out of Bound: [[[1339.608    923.8944 ]]
+
+ [[-358.1236  1024.2831 ]]
+
+ [[1309.2667   907.728  ]]
+
+ [[1440.876    883.71454]]]
+Bad bounding box: [[[1132.7283   357.46658]]
+
+ [[1340.3302   909.7621 ]]
+
+ [[1086.3597   349.85196]]
+
+ [[1292.2827   154.89328]]]
+Not enough matches are found - 3/5
+Not enough matches are found - 2/5
+Not enough matches are found - 0/5
+Not enough matches are found - 2/5
+Not enough matches are found - 0/5
+Out of Bound: [[[-796.5708   -129.89171 ]]
+
+ [[1024.2292    141.46446 ]]
+
+ [[1484.9404    267.38068 ]]
+
+ [[ 531.3916    -62.486126]]]
+Not enough matches are found - 1/5
+Not enough matches are found - 4/5
+Not enough matches are found - 1/5
+Not enough matches are found - 2/5
+Bad bounding box: [[[ 717.4859   138.67978]]
+
+ [[1047.4519   586.62354]]
+
+ [[1207.6919   703.249  ]]
+
+ [[ 827.2663   487.02695]]]
+Not enough matches are found - 2/5
+Out of Bound: [[[1378.7532   487.09436]]
+
+ [[-809.8662   755.3244 ]]
+
+ [[1067.6234   599.523  ]]
+
+ [[1735.4727   428.97324]]]
+Out of Bound: [[[1621.0448  808.6019]]
+
+ [[1621.3917  808.4566]]
+
+ [[1621.3981  808.8665]]
+
+ [[1621.0562  808.5258]]]
+Not enough matches are found - 3/5
+Out of Bound: [[[1391.6008   -61.55473]]
+
+ [[ 861.05286  207.27687]]
+
+ [[  60.69007  742.92456]]
+
+ [[-655.90936  439.3424 ]]]
+Too small: [[[1310.7571  774.6944]]
+
+ [[1311.2794  776.1951]]
+
+ [[1311.3126  775.9456]]
+
+ [[1311.4952  776.4639]]]
+Not enough matches are found - 1/5
+Out of Bound: [[[828.90625  252.44337 ]]
+
+ [[556.1704   349.88156 ]]
+
+ [[441.9112   -29.262463]]
+
+ [[342.55078  322.91272 ]]]
+Not enough matches are found - 4/5
+Not enough matches are found - 0/5
+Out of Bound: [[[   823.4477      349.74075 ]]
+
+ [[-10948.003     13199.395   ]]
+
+ [[   891.9646      227.30032 ]]
+
+ [[  1139.6509       78.017784]]]
+Not enough matches are found - 0/5
+Out of Bound: [[[ 996.63556 1071.8091 ]]
+
+ [[1166.2937   946.64136]]
+
+ [[ 842.5089  1592.4834 ]]
+
+ [[2271.294   2249.2478 ]]]
+Not enough matches are found - 0/5
+Bad bounding box: [[[ 962.8768   362.2463 ]]
+
+ [[ 958.63574  362.08987]]
+
+ [[1005.51166  344.59415]]
+
+ [[ 910.942    326.79953]]]
+Not enough matches are found - 2/5
+Not enough matches are found - 0/5
+Out of Bound: [[[1263.384    597.01855]]
+
+ [[1458.3495   740.96356]]
+
+ [[ 947.7312   371.09738]]
+
+ [[ 306.57452 -117.21343]]]
+Out of Bound: [[[1620.2142   811.3048 ]]
+
+ [[1620.5457   811.5734 ]]
+
+ [[1619.808    811.10657]]
+
+ [[1620.2318   811.50836]]]
+Not enough matches are found - 2/5
+Not enough matches are found - 0/5
+Out of Bound: [[[1507.8674   231.39748]]
+
+ [[1447.5691   182.21828]]
+
+ [[1533.5852   252.98068]]
+
+ [[1542.4866   258.46048]]]
+Out of Bound: [[[1871.3628   811.0304 ]]
+
+ [[1871.3864   811.0635 ]]
+
+ [[1871.3595   811.02545]]
+
+ [[1871.404    811.08405]]]
+Not enough matches are found - 0/5
+Not enough matches are found - 5/5
+Bad bounding box: [[[351.66104  97.31321]]
+
+ [[328.05927  96.22041]]
+
+ [[396.914   128.94987]]
+
+ [[320.66068  92.5479 ]]]
+Out of Bound: [[[   625.9914    246.4494]]
+
+ [[-13910.433    7175.155 ]]
+
+ [[  2834.3967    979.0594]]
+
+ [[  1852.671     165.6955]]]
+Not enough matches are found - 5/5
+Not enough matches are found - 0/5
+Not enough matches are found - 0/5
+Not enough matches are found - 0/5
+Not enough matches are found - 3/5
+Not enough matches are found - 3/5
+Not enough matches are found - 4/5
+Out of Bound: [[[-550.1568  1538.2874 ]]
+
+ [[2132.9275  1968.0662 ]]
+
+ [[ 831.16565  762.7687 ]]
+
+ [[1488.7628  1268.3885 ]]]
+Not enough matches are found - 4/5
+Not enough matches are found - 1/5
+Not enough matches are found - 0/5
+Not enough matches are found - 0/5
+Not enough matches are found - 1/5
+Not enough matches are found - 5/5
+Not enough matches are found - 2/5
+Not enough matches are found - 4/5
+Not enough matches are found - 1/5
+Out of Bound: [[[ -436.82678  2494.9136 ]]
+
+ [[-3227.3125   5526.237  ]]
+
+ [[  298.86005  1534.1792 ]]
+
+ [[ 1337.1282    312.58466]]]
+Not enough matches are found - 0/5
+Not enough matches are found - 0/5
+Not enough matches are found - 0/5
+Not enough matches are found - 4/5
+Not enough matches are found - 3/5
+Out of Bound: [[[ 994.3935    -145.19086  ]]
+
+ [[1009.01764    380.28018  ]]
+
+ [[1047.6357       6.4295335]]
+
+ [[1699.9718     872.49286  ]]]
+Not enough matches are found - 3/5
+Not enough matches are found - 1/5
+Not enough matches are found - 2/5
+Too small: [[[365.6365  379.9261 ]]
+
+ [[365.61545 380.09528]]
+
+ [[365.49457 379.4108 ]]
+
+ [[365.66257 380.08096]]]
+Not enough matches are found - 5/5
+Not enough matches are found - 4/5
+Not enough matches are found - 0/5
+Not enough matches are found - 0/5
+Not enough matches are found - 4/5
+Not enough matches are found - 2/5
+Out of Bound: [[[1226.7924   222.22379]]
+
+ [[2960.21    2000.0968 ]]
+
+ [[3803.9724   821.33453]]
+
+ [[1374.3025   837.74524]]]
+Out of Bound: [[[1405.241    153.55412]]
+
+ [[2051.7666  1093.4597 ]]
+
+ [[1605.6566  1572.3528 ]]
+
+ [[1570.3818   759.6546 ]]]
+Out of Bound: [[[-369.08728  625.05945]]
+
+ [[3102.155   2209.3923 ]]
+
+ [[1564.1427   500.56476]]
+
+ [[1619.2128   892.08594]]]
+Bad bounding box: [[[921.4918  203.35658]]
+
+ [[927.0856  203.22427]]
+
+ [[971.7501  247.47438]]
+
+ [[944.4552  221.4957 ]]]
+Not enough matches are found - 4/5
+Not enough matches are found - 2/5
+Not enough matches are found - 1/5
+Bad bounding box: [[[283.71085  142.4832  ]]
+
+ [[364.11725   98.00502 ]]
+
+ [[354.06702  107.226364]]
+
+ [[365.1137   100.58344 ]]]
