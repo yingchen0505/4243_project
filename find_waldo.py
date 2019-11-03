@@ -6,6 +6,8 @@ import os
 
 template_path = 'datasets/crop_train/'
 # template_path = 'datasets/crop_train_nonsimilar/'
+output_path = 'output_downsized2/'
+# output_path = 'output/'
 
 # Read all templates
 template_names = []
@@ -23,9 +25,9 @@ for r, d, f in os.walk(template_path):
 MIN_MATCH_COUNT = 5
 
 # Initialize output file
-output_file_waldo = open("output/waldo.txt", "w+")
-output_file_wenda = open("output/wenda.txt", "w+")
-output_file_wizard = open("output/wizard.txt", "w+")
+output_file_waldo = open(output_path + "waldo.txt", "w+")
+output_file_wenda = open(output_path + "wenda.txt", "w+")
+output_file_wizard = open(output_path + "wizard.txt", "w+")
 
 # Images IDs to run on
 image_ids_file = open("datasets/ImageSets/val.txt", 'r')
@@ -198,8 +200,8 @@ for image_id in image_ids:
                 img3 = cv2.polylines(img3, [np.int32(dst)], True, (0, 0, 255), 3, cv2.LINE_AA)
 
                 # plt.imshow(img3)
-                # plt.savefig('output/' + image_id + '_' + template_names[index] + '.jpg', dpi=2000)
-                cv2.imwrite('output/' + image_id + '_' + template_names[index] + '.jpg', img3)
+                # plt.savefig(output_path + image_id + '_' + template_sift['template_name'] + '.jpg', dpi=2000)
+                cv2.imwrite(output_path + image_id + '_' + template_sift['template_name'] + '.jpg', img3)
 
                 # remove offset
                 dst[:, :, 0] -= w
