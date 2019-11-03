@@ -60,7 +60,28 @@ def is_rectangle(x1, y1, x2, y2, x3, y3, x4, y4):
 
     threshold = 0.5
     diagonals = np.array((dd1, dd2, dd3, dd4))
-    if np.std(diagonals)/np.mean(diagonals) < threshold:
+    if np.std(diagonals) / np.mean(diagonals) < threshold:
+        return True
+    else:
+        return False
+
+
+def polygon_area(corners):
+    n = len(corners)  # of corners
+    area = 0.0
+    for i in range(n):
+        j = (i + 1) % n
+        area += corners[i][0] * corners[j][1]
+        area -= corners[j][0] * corners[i][1]
+    area = abs(area) / 2.0
+    return area
+
+
+# if the bounding box is insanely small, it's not a legit box
+def is_too_small(pts, img_size):
+    threshold = 0.00001
+    box_area = polygon_area(pts)
+    if box_area / (img_size[0] * img_size[1]) < threshold:
         return True
     else:
         return False
@@ -121,6 +142,10 @@ for image_id in image_ids:
 
                 dst = cv2.perspectiveTransform(pts, M)
                 dst += (w, 0)  # adding offset
+
+                if is_too_small(dst[:, 0, :], img2_resized.shape):
+                    print("Too small: " + str(dst))
+                    continue
 
                 if not is_rectangle(
                         dst[0][0][0], dst[0][0][1], dst[1][0][0], dst[1][0][1], dst[2][0][0], dst[2][0][1],
