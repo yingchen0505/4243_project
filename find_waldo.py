@@ -81,7 +81,7 @@ def is_rectangle(x1, y1, x2, y2, x3, y3, x4, y4):
     dd3 = np.square(cx - x3) + np.square(cy - y3)
     dd4 = np.square(cx - x4) + np.square(cy - y4)
 
-    diagnonal_threshold = 0.5
+    diagnonal_threshold = 0.1
     diagonals = np.array((dd1, dd2, dd3, dd4))
     diagonals_legit_by_std = np.std(diagonals) / np.mean(diagonals) < diagnonal_threshold
     diagnonal_ratio_threshold = 0.1
@@ -92,8 +92,8 @@ def is_rectangle(x1, y1, x2, y2, x3, y3, x4, y4):
     edge3 = np.square(x4 - x3) + np.square(y4 - y3)
     edge4 = np.square(x1 - x4) + np.square(y1 - y4)
     edges = np.array((edge1, edge2, edge3, edge4))
-    edges_threshold = 0.5
-    # edges_legit = np.std(edges) / np.mean(edges) < edges_threshold
+    # edges_threshold = 0.5
+    # edges_legit_std = np.std(edges) / np.mean(edges) < edges_threshold
     edges_ratio_threshold = 0.1
     edges_legit = np.min(edges) / np.max(edges) > edges_ratio_threshold
 
