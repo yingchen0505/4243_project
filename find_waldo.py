@@ -6,7 +6,7 @@ import os
 
 template_path = 'datasets/crop_train/'
 # template_path = 'datasets/crop_train_nonsimilar/'
-output_path = 'output_twisted/'
+output_path = 'output_twisted_tuned/'
 # output_path = 'output_minmax/'
 # output_path = 'output_downsized/'
 # output_path = 'output/'
@@ -84,7 +84,7 @@ def is_rectangle(x1, y1, x2, y2, x3, y3, x4, y4):
     diagnonal_threshold = 0.5
     diagonals = np.array((dd1, dd2, dd3, dd4))
     # diagonals_legit = np.std(diagonals) / np.mean(diagonals) < diagnonal_threshold
-    diagnonal_ratio_threshold = 0.5
+    diagnonal_ratio_threshold = 0.1
     diagonals_legit = np.min(diagonals) / np.max(diagonals) > diagnonal_ratio_threshold
 
     edge1 = np.square(x2 - x1) + np.square(y2 - y1)
@@ -94,7 +94,7 @@ def is_rectangle(x1, y1, x2, y2, x3, y3, x4, y4):
     edges = np.array((edge1, edge2, edge3, edge4))
     edges_threshold = 0.5
     # edges_legit = np.std(edges) / np.mean(edges) < edges_threshold
-    edges_ratio_threshold = 0.5
+    edges_ratio_threshold = 0.1
     edges_legit = np.min(edges) / np.max(edges) > edges_ratio_threshold
 
     if diagonals_legit & edges_legit:
