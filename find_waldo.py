@@ -6,9 +6,6 @@ import os
 
 template_path = 'datasets/crop_train/'
 # template_path = 'datasets/crop_train_nonsimilar/'
-# output_path = 'output_twisted_tuned/'
-# output_path = 'output_minmax/'
-# output_path = 'output_downsized/'
 output_path = 'output/'
 
 # Read all templates
@@ -24,7 +21,7 @@ for r, d, f in os.walk(template_path):
             templates.append(os.path.join(r, file))
             template_names.append(str(file).strip('.png'))
 
-MIN_MATCH_COUNT = 3
+MIN_MATCH_COUNT = 5
 
 # Initialize output file
 output_file_waldo = open(output_path + "waldo.txt", "w+")
@@ -188,9 +185,6 @@ for image_id in image_ids:
                 dst_pts = np.float32([kp2[m.trainIdx].pt for m in good]).reshape(-1, 1, 2)
                 M, mask = cv2.findHomography(src_pts, dst_pts, cv2.RANSAC, 5.0)
                 matchesMask = mask.ravel().tolist()
-                # h, w = img1.shape
-                # pts = np.float32([[0, 0], [0, h - 1], [w - 1, h - 1], [w - 1, 0]]).reshape(-1, 1, 2)
-                # dst = cv2.perspectiveTransform(pts, M)
                 h, w = img1.shape[:2]
                 pts = np.float32([[0, 0], [0, h - 1], [w - 1, h - 1], [w - 1, 0]]).reshape(-1, 1, 2)
 
@@ -221,13 +215,12 @@ for image_id in image_ids:
                     continue
 
                 dst += (w, 0)  # adding offset
-                # img2_resized = cv2.polylines(img2_resized, [np.int32(dst)], True, 255, 3, cv2.LINE_AA)
                 draw_params = dict(matchColor=(0, 255, 0),  # draw matches in green color
                                    singlePointColor=None,
                                    matchesMask=matchesMask,  # draw only inliers
                                    flags=2)
-                #
-                # # cv2.drawMatchesKnn expects list of lists as matches.
+
+                # cv2.drawMatchesKnn expects list of lists as matches.
                 img3 = cv2.drawMatches(img1, kp1, img2_resized, kp2, good, None, **draw_params)
                 img3 = cv2.polylines(img3, [np.int32(dst)], True, (0, 0, 255), 3, cv2.LINE_AA)
 
