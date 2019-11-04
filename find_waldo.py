@@ -21,7 +21,7 @@ for r, d, f in os.walk(template_path):
             templates.append(os.path.join(r, file))
             template_names.append(str(file).strip('.png'))
 
-MIN_MATCH_COUNT = 5
+MIN_MATCH_COUNT = 0
 
 # Initialize output file
 output_file_waldo = open(output_path + "waldo.txt", "w+")
@@ -53,17 +53,17 @@ for index, template in enumerate(templates):
     kp1, des1 = sift.detectAndCompute(img1, None)
     template_sifts.append({'kp1': kp1, 'des1': des1, 'img1': img1, 'template_name': template_names[index]})
 
-    # # Downsize bigger templates
-    # if max(img1.shape) > 100:
-    #     print('downsizing ' + template_names[index])
-    #     new_size = get_new_size(img1.shape, 2)
-    #     while np.max(new_size) > 10:
-    #         img_resized = cv2.resize(img1, new_size)
-    #         kp1, des1 = sift.detectAndCompute(img_resized, None)
-    #         template_sifts.append({
-    #             'kp1': kp1, 'des1': des1, 'img1': img_resized,
-    #             'template_name': template_names[index] + '_size' + str(new_size)})
-    #         new_size = get_new_size(img_resized.shape, 2)
+    # Downsize bigger templates
+    if max(img1.shape) > 100:
+        print('downsizing ' + template_names[index])
+        new_size = get_new_size(img1.shape, 2)
+        while np.max(new_size) > 10:
+            img_resized = cv2.resize(img1, new_size)
+            kp1, des1 = sift.detectAndCompute(img_resized, None)
+            template_sifts.append({
+                'kp1': kp1, 'des1': des1, 'img1': img_resized,
+                'template_name': template_names[index] + '_size' + str(new_size)})
+            new_size = get_new_size(img_resized.shape, 2)
 
 
 # find center of gravity for four points
@@ -177,7 +177,7 @@ for image_id in image_ids:
             # Apply ratio test
             good = []
             for m, n in matches:
-                if m.distance < 0.75 * n.distance:
+                if m.distance < 0.85 * n.distance:
                     good.append(m)
 
             if len(good) > MIN_MATCH_COUNT:
