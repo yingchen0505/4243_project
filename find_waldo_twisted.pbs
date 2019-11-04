@@ -1,0 +1,22 @@
+#!/bin/bash
+
+#PBS -N FindWaldoTwisted
+#PBS -q normal
+#PBS -l select=1:ncpus=10:mem=40G
+#PBS -l walltime=99:00:00
+#PBS -P Personal
+#PBS -j oe
+#PBS -o ./Out/find_waldo_twisted.o
+#PBS -e ./Out/find_waldo_twisted.e
+# mail alert at (b)eginning, (e)nd and (a)bortion of execution
+#PBS -m bea
+# send mail to the following address
+#PBS -M e0010911@u.nus.edu
+
+echo find_waldo_twisted
+pwd
+cd $PBS_O_WORKDIR
+module load anaconda/3
+source activate cs4243
+export PYTHONHOME=${HOME}/.conda/envs/cs4243
+python find_waldo_twisted.py

@@ -6,7 +6,9 @@ import os
 
 template_path = 'datasets/crop_train/'
 # template_path = 'datasets/crop_train_nonsimilar/'
-output_path = 'output_downsized/'
+output_path = 'output_twisted/'
+# output_path = 'output_minmax/'
+# output_path = 'output_downsized/'
 # output_path = 'output/'
 
 # Read all templates
@@ -69,6 +71,7 @@ for index, template in enumerate(templates):
 
 # find center of gravity for four points
 # if the diagonals are of similar lengths, it is a legit box
+# if the four edges are of similar lengths, it is a legit box
 def is_rectangle(x1, y1, x2, y2, x3, y3, x4, y4):
     cx = (x1 + x2 + x3 + x4) / 4
     cy = (y1 + y2 + y3 + y4) / 4
@@ -78,9 +81,23 @@ def is_rectangle(x1, y1, x2, y2, x3, y3, x4, y4):
     dd3 = np.square(cx - x3) + np.square(cy - y3)
     dd4 = np.square(cx - x4) + np.square(cy - y4)
 
-    threshold = 0.5
+    diagnonal_threshold = 0.5
     diagonals = np.array((dd1, dd2, dd3, dd4))
-    if np.std(diagonals) / np.mean(diagonals) < threshold:
+    # diagonals_legit = np.std(diagonals) / np.mean(diagonals) < diagnonal_threshold
+    diagnonal_ratio_threshold = 0.5
+    diagonals_legit = np.min(diagonals) / np.max(diagonals) > diagnonal_ratio_threshold
+
+    edge1 = np.square(x2 - x1) + np.square(y2 - y1)
+    edge2 = np.square(x3 - x2) + np.square(y3 - y2)
+    edge3 = np.square(x4 - x3) + np.square(y4 - y3)
+    edge4 = np.square(x1 - x4) + np.square(y1 - y4)
+    edges = np.array((edge1, edge2, edge3, edge4))
+    edges_threshold = 0.5
+    # edges_legit = np.std(edges) / np.mean(edges) < edges_threshold
+    edges_ratio_threshold = 0.5
+    edges_legit = np.min(edges) / np.max(edges) > edges_ratio_threshold
+
+    if diagonals_legit & edges_legit:
         return True
     else:
         return False
@@ -105,6 +122,17 @@ def is_too_small(pts, img_size):
         return True
     else:
         return False
+
+
+# If the points in normal order of 1,2,3,4 has smaller area than 1,2,4,3,
+# The points form a twisted rectangle and therefore the box is not legit
+def is_twisted(pts, img_size):
+    normal_area = polygon_area(pts)
+    twisted_points = np.array((pts[0], pts[1], pts[3], pts[2]))
+    twisted_area = polygon_area(twisted_points)
+    if normal_area < twisted_area:
+        return True
+    return False
 
 
 # Return true if any point falls outside of image
@@ -187,6 +215,10 @@ for image_id in image_ids:
 
                 if points_out_of_bound(dst[:, 0, :], img2_resized.shape):
                     print("Out of Bound: " + str(dst))
+                    continue
+
+                if is_twisted(dst[:, 0, :], img2_resized.shape):
+                    print("Twisted: " + str(dst))
                     continue
 
                 if is_too_small(dst[:, 0, :], img2_resized.shape):
