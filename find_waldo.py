@@ -24,7 +24,7 @@ for r, d, f in os.walk(template_path):
             templates.append(os.path.join(r, file))
             template_names.append(str(file).strip('.png'))
 
-MIN_MATCH_COUNT = 5
+MIN_MATCH_COUNT = 3
 
 # Initialize output file
 output_file_waldo = open(output_path + "waldo.txt", "w+")
@@ -188,18 +188,9 @@ for image_id in image_ids:
                 dst_pts = np.float32([kp2[m.trainIdx].pt for m in good]).reshape(-1, 1, 2)
                 M, mask = cv2.findHomography(src_pts, dst_pts, cv2.RANSAC, 5.0)
                 matchesMask = mask.ravel().tolist()
-                h, w = img1.shape
-                pts = np.float32([[0, 0], [0, h - 1], [w - 1, h - 1], [w - 1, 0]]).reshape(-1, 1, 2)
-                dst = cv2.perspectiveTransform(pts, M)
-                img2_resized = cv2.polylines(img2_resized, [np.int32(dst)], True, 255, 3, cv2.LINE_AA)
-                draw_params = dict(matchColor=(0, 255, 0),  # draw matches in green color
-                                   singlePointColor=None,
-                                   matchesMask=matchesMask,  # draw only inliers
-                                   flags=2)
-
-                # cv2.drawMatchesKnn expects list of lists as matches.
-                img3 = cv2.drawMatches(img1, kp1, img2_resized, kp2, good, None, **draw_params)
-
+                # h, w = img1.shape
+                # pts = np.float32([[0, 0], [0, h - 1], [w - 1, h - 1], [w - 1, 0]]).reshape(-1, 1, 2)
+                # dst = cv2.perspectiveTransform(pts, M)
                 h, w = img1.shape[:2]
                 pts = np.float32([[0, 0], [0, h - 1], [w - 1, h - 1], [w - 1, 0]]).reshape(-1, 1, 2)
 
@@ -211,8 +202,6 @@ for image_id in image_ids:
                     traceback.print_exc(file=sys.stdout)
                     continue
 
-                dst += (w, 0)  # adding offset
-
                 if points_out_of_bound(dst[:, 0, :], img2_resized.shape):
                     print("Out of Bound: " + str(dst))
                     continue
@@ -221,9 +210,9 @@ for image_id in image_ids:
                     print("Twisted: " + str(dst))
                     continue
 
-                if is_too_small(dst[:, 0, :], img2_resized.shape):
-                    print("Too small: " + str(dst))
-                    continue
+                # if is_too_small(dst[:, 0, :], img2_resized.shape):
+                #     print("Too small: " + str(dst))
+                #     continue
 
                 if not is_rectangle(
                         dst[0][0][0], dst[0][0][1], dst[1][0][0], dst[1][0][1], dst[2][0][0], dst[2][0][1],
@@ -231,6 +220,15 @@ for image_id in image_ids:
                     print("Bad bounding box: " + str(dst))
                     continue
 
+                dst += (w, 0)  # adding offset
+                # img2_resized = cv2.polylines(img2_resized, [np.int32(dst)], True, 255, 3, cv2.LINE_AA)
+                draw_params = dict(matchColor=(0, 255, 0),  # draw matches in green color
+                                   singlePointColor=None,
+                                   matchesMask=matchesMask,  # draw only inliers
+                                   flags=2)
+                #
+                # # cv2.drawMatchesKnn expects list of lists as matches.
+                img3 = cv2.drawMatches(img1, kp1, img2_resized, kp2, good, None, **draw_params)
                 img3 = cv2.polylines(img3, [np.int32(dst)], True, (0, 0, 255), 3, cv2.LINE_AA)
 
                 # plt.imshow(img3)
