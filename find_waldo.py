@@ -65,7 +65,6 @@ for index, template in enumerate(templates):
                 'template_name': template_names[index] + '_size' + str(new_size)})
             new_size = get_new_size(img_resized.shape, 2)
 
-
 # find center of gravity for four points
 # if the diagonals are of similar lengths, it is a legit box
 # if the four edges are of similar lengths, it is a legit box
@@ -112,10 +111,9 @@ def polygon_area(corners):
 
 
 # if the bounding box is insanely small, it's not a legit box
-def is_too_small(pts, img_size):
-    threshold = 0.00001
+def is_too_small(pts):
     box_area = polygon_area(pts)
-    if box_area / (img_size[0] * img_size[1]) < threshold:
+    if box_area < 100:
         return True
     else:
         return False
@@ -123,12 +121,14 @@ def is_too_small(pts, img_size):
 
 # If the points in normal order of 1,2,3,4 has smaller area than 1,2,4,3,
 # The points form a twisted rectangle and therefore the box is not legit
-def is_twisted(pts, img_size):
+def is_twisted(pts):
     normal_area = polygon_area(pts)
-    twisted_points = np.array((pts[0], pts[1], pts[3], pts[2]))
-    twisted_area = polygon_area(twisted_points)
-    if normal_area < twisted_area:
-        return True
+    for i in range(len(pts)):
+        twisted_points = np.array((pts[i], pts[(i+1) % 4], pts[(i+3) % 4], pts[(i+2) % 4]))
+    # twisted_points = np.array((pts[0], pts[1], pts[3], pts[2]))
+        twisted_area = polygon_area(twisted_points)
+        if normal_area < twisted_area:
+            return True
     return False
 
 
@@ -177,8 +177,8 @@ for image_id in image_ids:
             # Apply ratio test
             good = []
             for m, n in matches:
-                if m.distance < 0.85 * n.distance:
-                    good.append(m)
+                # if m.distance < 0.85 * n.distance:
+                good.append(m)
 
             if len(good) > MIN_MATCH_COUNT:
                 src_pts = np.float32([kp1[m.queryIdx].pt for m in good]).reshape(-1, 1, 2)
@@ -200,13 +200,13 @@ for image_id in image_ids:
                     print("Out of Bound: " + str(dst))
                     continue
 
-                if is_twisted(dst[:, 0, :], img2_resized.shape):
+                if is_twisted(dst[:, 0, :]):
                     print("Twisted: " + str(dst))
                     continue
 
-                # if is_too_small(dst[:, 0, :], img2_resized.shape):
-                #     print("Too small: " + str(dst))
-                #     continue
+                if is_too_small(dst[:, 0, :]):
+                    print("Too small: " + str(dst))
+                    continue
 
                 if not is_rectangle(
                         dst[0][0][0], dst[0][0][1], dst[1][0][0], dst[1][0][1], dst[2][0][0], dst[2][0][1],
