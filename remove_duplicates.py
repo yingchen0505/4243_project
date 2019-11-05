@@ -64,7 +64,7 @@ def remove_duplicates(ndarray):
     
     for ind1 in range (list_size):
         if ndarray[ind1,0] > current_picture:
-            current_picture = ndarray[0,0]
+            current_picture = ndarray[ind1,0]
         prunning_list = []
         
         
@@ -78,6 +78,8 @@ def remove_duplicates(ndarray):
                 bigger = comparator(ndarray[ind1,2:6], ndarray[ind3,2:6])
                 if bigger == 1:
                     overlap_list.append(ind3)
+                else:
+                    overlap_list.append(ind1)
     
     # remove duplcates in the overlap_list, a set cannot have dupes
     overlap_list = list(set(overlap_list))
@@ -85,6 +87,11 @@ def remove_duplicates(ndarray):
     iter_ind = list(range(0, list_size))
     output_ind = [x for x in iter_ind if x not in overlap_list]
     output = ndarray[output_ind]
+    output = output.astype(int)
+    output = output.astype(str)
+    for ind4 in range (output.shape[0]):
+        output[ind4, 0] = output[ind4, 0].zfill(3)
+        
     
     return output
     
