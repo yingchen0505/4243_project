@@ -1,6 +1,0 @@
-Best image display: 1300, 630
-
-Dataset:
-- There can be more than one waldo
-- Half a waldo can also be detected
-- For half bodies, the face must still be there. So we should focus on the face and some neck & shoulders.
