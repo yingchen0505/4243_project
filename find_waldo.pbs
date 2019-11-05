@@ -2,12 +2,12 @@
 
 #PBS -N FindWaldo
 #PBS -q normal
-#PBS -l select=1:ncpus=5:mem=20G
-#PBS -l walltime=10:00:00
+#PBS -l select=1:ncpus=7:mem=30G
+#PBS -l walltime=99:00:00
 #PBS -P Personal
 #PBS -j oe
-#PBS -o ./output/find_waldo.o
-#PBS -e ./output/find_waldo.e
+#PBS -o ./output2/find_waldo.o
+#PBS -e ./output2/find_waldo.e
 # mail alert at (b)eginning, (e)nd and (a)bortion of execution
 #PBS -m bea
 # send mail to the following address
@@ -19,4 +19,4 @@ cd $PBS_O_WORKDIR
 module load anaconda/3
 source activate cs4243
 export PYTHONHOME=${HOME}/.conda/envs/cs4243
-python find_waldo.py
+python find_waldo2.py
