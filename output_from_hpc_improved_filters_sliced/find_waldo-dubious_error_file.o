@@ -1,0 +1,67 @@
+find_waldo3
+/home/users/nus/e0010911
+Traceback (most recent call last):
+  File "/app/anaconda/3/bin/conda", line 6, in <module>
+    sys.exit(main())
+  File "/app/anaconda/3/lib/python3.5/site-packages/conda/cli/main.py", line 48, in main
+    activate.main()
+  File "/app/anaconda/3/lib/python3.5/site-packages/conda/cli/activate.py", line 135, in main
+    conda.install.symlink_conda(prefix, root_dir, shell)
+  File "/app/anaconda/3/lib/python3.5/site-packages/conda/install.py", line 591, in symlink_conda
+    symlink_conda_hlp(prefix, root_dir, where, symlink_fn)
+  File "/app/anaconda/3/lib/python3.5/site-packages/conda/install.py", line 605, in symlink_conda_hlp
+    os.remove(prefix_file)
+FileNotFoundError: [Errno 2] No such file or directory: '/home/users/nus/e0010911/.conda/envs/cs4243/bin/conda'
+Failed to import the site module
+Error processing line 1 of /home/users/nus/e0010911/.conda/envs/cs4243/lib/python3.5/site-packages/matplotlib-2.0.2-py3.5-nspkg.pth:
+
+Traceback (most recent call last):
+  File "/home/users/nus/e0010911/.conda/envs/cs4243/lib/python3.5/site.py", line 167, in addpackage
+    exec(line)
+  File "<string>", line 1, in <module>
+  File "/home/users/nus/e0010911/.conda/envs/cs4243/lib/python3.5/types.py", line 166, in <module>
+    import functools as _functools
+  File "/home/users/nus/e0010911/.conda/envs/cs4243/lib/python3.5/functools.py", line 23, in <module>
+    from weakref import WeakKeyDictionary
+  File "/home/users/nus/e0010911/.conda/envs/cs4243/lib/python3.5/weakref.py", line 12, in <module>
+    from _weakref import (
+ImportError: cannot import name '_remove_dead_weakref'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/users/nus/e0010911/.conda/envs/cs4243/lib/python3.5/site.py", line 567, in <module>
+    main()
+  File "/home/users/nus/e0010911/.conda/envs/cs4243/lib/python3.5/site.py", line 550, in main
+    known_paths = addsitepackages(known_paths)
+  File "/home/users/nus/e0010911/.conda/envs/cs4243/lib/python3.5/site.py", line 327, in addsitepackages
+    addsitedir(sitedir, known_paths)
+  File "/home/users/nus/e0010911/.conda/envs/cs4243/lib/python3.5/site.py", line 206, in addsitedir
+    addpackage(sitedir, name, known_paths)
+  File "/home/users/nus/e0010911/.conda/envs/cs4243/lib/python3.5/site.py", line 177, in addpackage
+    import traceback
+  File "/home/users/nus/e0010911/.conda/envs/cs4243/lib/python3.5/traceback.py", line 5, in <module>
+    import linecache
+  File "/home/users/nus/e0010911/.conda/envs/cs4243/lib/python3.5/linecache.py", line 8, in <module>
+    import functools
+  File "/home/users/nus/e0010911/.conda/envs/cs4243/lib/python3.5/functools.py", line 23, in <module>
+    from weakref import WeakKeyDictionary
+  File "/home/users/nus/e0010911/.conda/envs/cs4243/lib/python3.5/weakref.py", line 12, in <module>
+    from _weakref import (
+ImportError: cannot import name '_remove_dead_weakref'
+======================================================================================
+
+			Resource Usage on 2019-11-06 01:22:28.139898:
+
+	JobId: 9216208.wlm01  
+	Project: personal-e0010911 
+	Exit Status: 1
+	NCPUs Requested: 9				NCPUs Used: 9
+							CPU Time Used: 00:00:01
+	Memory Requested: 40gb 				Memory Used: 0kb
+							Vmem Used: 0kb
+	Walltime requested: 99:00:00 			Walltime Used: 00:00:04
+	
+	Execution Nodes Used: (std1650:ncpus=9:mem=41943040kb)
+	
+ ======================================================================================
