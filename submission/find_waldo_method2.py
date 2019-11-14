@@ -8,6 +8,8 @@ template_path = 'datasets/crop_train/'
 output_path = 'output2/'
 
 # Read all templates
+# These templates are pre-cropped from the training set 
+# using another set of code in the 'crop.ipynb' notebook
 template_names = []
 templates = []
 # r=root, d=directories, f = files
@@ -20,31 +22,38 @@ for r, d, f in os.walk(template_path):
             templates.append(os.path.join(r, file))
             template_names.append(str(file).strip('.png'))
 
+# The minimum number of matches needed for the algorithm to proceed to draw bounding boxes
+# In our case, the best param setting is found to be 0, since we want to be as lenient as possible
+# To obtain more possible waldos
 MIN_MATCH_COUNT = 0
 
-# Initialize output file
+# Initialize output files
 output_file_waldo = open(output_path + "waldo.txt", "w+")
 output_file_wenda = open(output_path + "wenda.txt", "w+")
 output_file_wizard = open(output_path + "wizard.txt", "w+")
 
 # Images IDs to run on
+# These are the test images we want to see how well how templates can match with
 image_ids_file = open("datasets/ImageSets/val.txt", 'r')
-# image_ids_file = open("datasets/ImageSets/train.txt", 'r')
 image_ids = image_ids_file.readlines()
 
+# A list to store the sift key points and descriptors extracted from the templates
+# Since it takes a long time to extract the descriptors
 template_sifts = []
 
 # Initiate SIFT detector
 sift = cv2.xfeatures2d.SIFT_create()
 
 
+# This is a helper function to generate the new size when we perform 
+# Downsizing of an image
 def get_new_size(img_shape, down_scaling_factor):
     size = np.array(np.rint(np.array(img_shape, dtype=int) / down_scaling_factor), dtype=int)
     size = np.array((size[1], size[0]))
     return tuple(size)
 
 
-# Build sift for all the templates
+# Calculate sift key point and descriptors for all the templates
 for index, template in enumerate(templates):
     print(template_names[index])
     img1 = cv2.imread(template, flags=cv2.IMREAD_GRAYSCALE)  # Template
