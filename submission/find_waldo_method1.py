@@ -165,13 +165,15 @@ def points_out_of_bound(pts, img_size):
     return False
 
 
-# Run on each image
+# Run on each test image to find matches with templates, and draw bounding boxes
 for image_id in image_ids:
     image_id = image_id.strip('\n')
     print('datasets/JPEGImages/' + image_id + '.jpg')
 
     try:
         img2 = cv2.imread('datasets/JPEGImages/' + image_id + '.jpg', flags=cv2.IMREAD_GRAYSCALE)  # validation image
+		
+		# Downsizing larger test images since OpenCV has a size limit for SIFT
         scaling_factor = np.ceil(max(img2.shape) / 1600)
         print(img2.shape)
         print(scaling_factor)
@@ -179,28 +181,35 @@ for image_id in image_ids:
         new_size = np.array((new_size[1], new_size[0]))
         new_size = tuple(new_size)
         print(new_size)
+		
         img2_resized = cv2.resize(img2, new_size)
         # plt.imshow(img2_resized)
         # plt.show()
+		
+		# Calculate keypoints and descriptors for the test image
         kp2, des2 = sift.detectAndCompute(img2_resized, None)
 
+		# Try to match with each template
         for index, template_sift in enumerate(template_sifts):
             kp1 = template_sift['kp1']
             des1 = template_sift['des1']
             img1 = template_sift['img1']
 
-            # BFMatcher with default params
+			# NN matching
             bf = cv2.BFMatcher()
             matches = bf.knnMatch(des1, des2, k=2)
             # Apply ratio test
+			# Actually, empirically we do better without the ratio test!
             good = []
             for m, n in matches:
                 # if m.distance < 0.85 * n.distance:
                 good.append(m)
 
+			# Try to draw bounding boxes
             if len(good) > MIN_MATCH_COUNT:
                 src_pts = np.float32([kp1[m.queryIdx].pt for m in good]).reshape(-1, 1, 2)
                 dst_pts = np.float32([kp2[m.trainIdx].pt for m in good]).reshape(-1, 1, 2)
+				# RANSAC
                 M, mask = cv2.findHomography(src_pts, dst_pts, cv2.RANSAC, 5.0)
                 matchesMask = mask.ravel().tolist()
                 h, w = img1.shape[:2]
