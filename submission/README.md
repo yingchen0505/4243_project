@@ -6,7 +6,6 @@ The templates are saved in the folder 'crop_train' under 'datasets'.
 2. Run the scripts 'find_waldo_method1.py' and 'find_waldo_method2.py'.    
 The first script uses our first method (which downsizes larger test images) as outlined in the report.    
 The outputs are saved in 'output1'.   
-
 The second script uses our second method (which slices larger test images into smaller chunks) as outlined in the report.    
 The outputs are saved in 'output2'.      
    
