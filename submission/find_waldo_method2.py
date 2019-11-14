@@ -61,10 +61,13 @@ for index, template in enumerate(templates):
     kp1, des1 = sift.detectAndCompute(img1, None)
     template_sifts.append({'kp1': kp1, 'des1': des1, 'img1': img1, 'template_name': template_names[index]})
 
-    # Downsize bigger templates
+	# Augment the template set by
+    # Downsizing bigger templates
+	# To generate additional templates
     if max(img1.shape) > 100:
         print('downsizing ' + template_names[index])
         new_size = get_new_size(img1.shape, 2)
+		# Only stop if the resized new template has edges shorter than 10 pixels
         while np.max(new_size) > 10:
             img_resized = cv2.resize(img1, new_size)
             kp1, des1 = sift.detectAndCompute(img_resized, None)
@@ -78,9 +81,12 @@ for index, template in enumerate(templates):
 # if the diagonals are of similar lengths, it is a legit box
 # if the four edges are of similar lengths, it is a legit box
 def is_rectangle(x1, y1, x2, y2, x3, y3, x4, y4):
+	# Calculate center of gravity
     cx = (x1 + x2 + x3 + x4) / 4
     cy = (y1 + y2 + y3 + y4) / 4
 
+	# Calculate the four "diagonals", 
+	# i.e. distance from CG to the four corners
     dd1 = np.square(cx - x1) + np.square(cy - y1)
     dd2 = np.square(cx - x2) + np.square(cy - y2)
     dd3 = np.square(cx - x3) + np.square(cy - y3)
@@ -97,8 +103,6 @@ def is_rectangle(x1, y1, x2, y2, x3, y3, x4, y4):
     edge3 = np.square(x4 - x3) + np.square(y4 - y3)
     edge4 = np.square(x1 - x4) + np.square(y1 - y4)
     edges = np.array((edge1, edge2, edge3, edge4))
-    # edges_threshold = 0.5
-    # edges_legit_std = np.std(edges) / np.mean(edges) < edges_threshold
     edges_ratio_threshold = 0.1
     edges_legit = np.min(edges) / np.max(edges) > edges_ratio_threshold
 
@@ -108,6 +112,8 @@ def is_rectangle(x1, y1, x2, y2, x3, y3, x4, y4):
         return False
 
 
+# This is a helper function that calculates the area of a polygon
+# Formed by the corners using the shoelace formula
 def polygon_area(corners):
     n = len(corners)  # of corners
     area = 0.0
@@ -132,9 +138,12 @@ def is_too_small(pts):
 # The points form a twisted rectangle and therefore the box is not legit
 def is_twisted(pts):
     normal_area = polygon_area(pts)
+	# Check for all permutations by taking each of the four points 
+	# as the "start" point
+	# Check of swapping the last two points generates a larger area than
+	# the normal order of points
     for i in range(len(pts)):
         twisted_points = np.array((pts[i], pts[(i + 1) % 4], pts[(i + 3) % 4], pts[(i + 2) % 4]))
-        # twisted_points = np.array((pts[0], pts[1], pts[3], pts[2]))
         twisted_area = polygon_area(twisted_points)
         if normal_area < twisted_area:
             return True
