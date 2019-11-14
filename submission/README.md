@@ -38,3 +38,13 @@ The 'find_waldo.o' files in the output folders are simply the print statements f
 
 The script 'remove_duplicates.py' is called by 'RemoveDuplicates.ipynb' to remove duplicate bounding boxes.     
 
+The current print-out in the Evaluation.ipynb notebook represents the accuracy of our final output.      
+
+-----------
+
+### Contact information:      
+
+In case the environment/code fails to run, please contact:     
+Lai Yingchen (A0146682X)    
+e: lai.yingchen@u.nus.edu    
+m: 83879025    
