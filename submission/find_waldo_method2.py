@@ -217,11 +217,14 @@ for image_id in image_ids:
                         try:
                             dst = cv2.perspectiveTransform(pts, M)
 
+						# Sometimes we fail to do the transform if the points are in bad shape
+						# Then we just move on to the next template
                         except:
                             print(template_sift['template_name'] + ' failed')
                             traceback.print_exc(file=sys.stdout)
                             continue
-
+							
+						# Here we apply a series of tests to prune the 'bad' bounding boxes!
                         if points_out_of_bound(dst[:, 0, :], img2_cropped.shape):
                             print("Out of Bound: " + str(dst))
                             continue
