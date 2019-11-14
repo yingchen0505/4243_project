@@ -242,7 +242,9 @@ for image_id in image_ids:
                                 dst[3][0][0], dst[3][0][1]):
                             print("Bad bounding box: " + str(dst))
                             continue
-
+						
+						# Here we draw the template alongside the test image 
+						# And the bounding box, and green lines indicating the matches!
                         dst += (w, 0)  # adding offset
                         draw_params = dict(matchColor=(0, 255, 0),  # draw matches in green color
                                            singlePointColor=None,
@@ -253,17 +255,21 @@ for image_id in image_ids:
                         img3 = cv2.drawMatches(img1, kp1, img2_cropped, kp2, good, None, **draw_params)
                         img3 = cv2.polylines(img3, [np.int32(dst)], True, (0, 0, 255), 3, cv2.LINE_AA)
 
+						# Here are two methods to output the image.
+						# If one doesn't work for you, try the other! 
+
                         # plt.imshow(img3)
                         # plt.savefig(output_path + image_id + '_' + template_sift['template_name'] + '.jpg', dpi=2000)
                         cv2.imwrite(output_path + image_id + '(' + str(i) + ',' + str(j) + ')_' + template_sift[
                             'template_name'] + '.jpg', img3)
 
+						# Here we are writing the output text file for evaluation
+						# So need to remove the offset of the template!
+
                         # remove offset
                         dst[:, :, 0] -= w
-                        # Scale back
-                        # dst *= scaling_factor
 
-                        # Write output test file
+                        # Write output text file
                         xmin = np.min(dst[:, :, 0])
                         ymin = np.min(dst[:, :, 1])
                         xmax = np.max(dst[:, :, 0])
